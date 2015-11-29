@@ -51,7 +51,10 @@ exports.config = {
 		},
 		stylesheets: {
 			joinTo: {
-				'css/app.css': /^app/
+				'css/app.css': [
+					/^app/,
+					'bower_components/animate-css/animate.css'
+				]
 			}
 		}
 	},

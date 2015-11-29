@@ -1,14 +1,18 @@
-angular.module('app').controller('HomeCtrl', function HomeCtrl() {
+angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
+    var vm = this; // this == $scope because we use the controllerAs definition
 
-    var $main = $( '#pt-main' ),
-        $pages = $main.children( 'div.pt-page' ),
+    // bind public functions
+    vm.selectStripe = selectStripe;
+
+    // private variables
+    var $main = $( '#pt-main' ), $pages, $navs, pagesCount,
         $iterate = $( '#iterateEffects' ),
         animcursor = 1,
-        pagesCount = $pages.length,
         current = 0,
         isAnimating = false,
         isWheeling = false,
+        isWheelingTimer = null,
         endCurrPage = false,
         endNextPage = false,
         animEndEventNames = {
@@ -22,16 +26,33 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl() {
     // support css animations
         support = Modernizr.cssanimations;
 
-    init();
+    $timeout(function() {
+        _init();
+    }, 100);
 
-    function init() {
+    // public functions
 
+    function selectStripe(index) {
+        if (index > current) {
+            _nextPage( 19, index, true );
+        } else {
+            _nextPage( 26, index, true );
+        }
+    }
+
+    // private functions
+
+    function _init() {
+        $pages = $main.children( 'div.pt-page' );
+        $navs = $('.pt-page-nav li', $main);
+        pagesCount = $pages.length;
         $pages.each( function() {
             var $page = $( this );
             $page.data( 'originalClassList', $page.attr( 'class' ) );
         } );
 
         $pages.eq( current ).addClass( 'pt-page-current' );
+        $navs.eq( current ).addClass( 'pt-nav-active' );
 
         $iterate.on( 'click', function() {
             if( isAnimating ) {
@@ -40,7 +61,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl() {
             if( animcursor > 67 ) {
                 animcursor = 1;
             }
-            nextPage( animcursor );
+            _nextPage( animcursor );
             ++animcursor;
         } );
 
@@ -50,7 +71,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl() {
         mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
         //mc.add( new Hammer.Tap({ event: 'quadrupletap', taps: 4 }) );
 
-        mc.on('pan', handlePan);
+        mc.on('pan', _handlePan);
         //mc.on('quadrupletap', handleTaps);
 
         $('body').on('mousewheel', function(ev) {
@@ -60,42 +81,114 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl() {
 
             isWheeling = true;
             if (ev.deltaY > 0) {
-                nextPage( 26 );
+                _nextPage( 26, -1 );
             } else {
-                nextPage( 19 );
+                _nextPage( 19, 1 );
+            }
+        });
+
+        $('.pt-page-nav li a', $main).on('mouseover', function(ev) {
+            $('body').addClass('pt-hover');
+        });
+
+        $('.pt-page-nav-wrap', $main).on('mouseout', function(ev) {
+            if ($(ev.target).hasClass('pt-page-nav-wrap')) {
+                $('body').removeClass('pt-hover');
             }
         });
     }
 
-    function handlePan(ev) {
+    function _handlePan(ev) {
         if (ev.direction === Hammer.DIRECTION_UP) {
-            nextPage( 19 );
+            _nextPage( 19, 1 );
         } else if (ev.direction === Hammer.DIRECTION_DOWN) {
-            nextPage( 26 );
+            _nextPage( 26, -1 );
         }
     }
 
-    function nextPage( animation ) {
+    function _nextPage( animation, step, force ) {
 
         if( isAnimating ) {
             return false;
         }
 
-        isAnimating = true;
-
         var $currPage = $pages.eq( current );
 
-        if( current < pagesCount - 1 ) {
-            ++current;
+        current = current + step;
+        if (force !== undefined) {
+            current = step;
         }
-        else {
+
+        if ( current < 0 ) {
             current = 0;
         }
+        if (current > pagesCount - 1) {
+            current = pagesCount - 1;
+        }
 
-        var $nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
+        if ($pages.eq( current).hasClass('pt-page-current')) {
+            return;
+        }
+
+        isAnimating = true;
+
+        var $nextPage = $pages.eq( current ).addClass( 'pt-page-current'),
             outClass = '', inClass = '';
 
-        switch( animation ) {
+        $('.pt-nav-active', $main).removeClass('pt-nav-active');
+        $navs
+            .eq( current )
+            .addClass( 'pt-nav-active' )
+            .addClass( 'animated' )
+            .addClass( 'pulse' )
+            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $(this)
+                    .removeClass('animated')
+                    .removeClass('pulse');
+            });
+
+        var __ret = _getAnimClasses(animation, outClass, inClass);
+
+        $currPage.addClass( __ret.outClass ).on( animEndEventName, function() {
+            $currPage.off( animEndEventName );
+            endCurrPage = true;
+            if( endNextPage ) {
+                _onEndAnimation( $currPage, $nextPage );
+            }
+        } );
+
+        $nextPage.addClass( __ret.inClass ).on( animEndEventName, function() {
+            $nextPage.off( animEndEventName );
+            endNextPage = true;
+            if( endCurrPage ) {
+                _onEndAnimation( $currPage, $nextPage );
+            }
+        } );
+
+        if( !support ) {
+            _onEndAnimation( $currPage, $nextPage );
+        }
+
+    }
+
+    function _onEndAnimation( $outpage, $inpage ) {
+        endCurrPage = false;
+        endNextPage = false;
+        _resetPage( $outpage, $inpage );
+        isAnimating = false;
+        clearTimeout(isWheelingTimer);
+        isWheelingTimer = setTimeout(function() {
+            isWheeling = false;
+        }, 600);
+    }
+
+    function _resetPage( $outpage, $inpage ) {
+        $outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
+        $inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+    }
+
+    function _getAnimClasses(animation, outClass, inClass) {
+        switch (animation) {
 
             case 1:
                 outClass = 'pt-page-moveToLeft';
@@ -367,42 +460,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl() {
                 break;
 
         }
-
-        $currPage.addClass( outClass ).on( animEndEventName, function() {
-            $currPage.off( animEndEventName );
-            endCurrPage = true;
-            if( endNextPage ) {
-                onEndAnimation( $currPage, $nextPage );
-            }
-        } );
-
-        $nextPage.addClass( inClass ).on( animEndEventName, function() {
-            $nextPage.off( animEndEventName );
-            endNextPage = true;
-            if( endCurrPage ) {
-                onEndAnimation( $currPage, $nextPage );
-            }
-        } );
-
-        if( !support ) {
-            onEndAnimation( $currPage, $nextPage );
-        }
-
-    }
-
-    function onEndAnimation( $outpage, $inpage ) {
-        endCurrPage = false;
-        endNextPage = false;
-        resetPage( $outpage, $inpage );
-        isAnimating = false;
-        setTimeout(function() {
-            isWheeling = false;
-        }, 800);
-    }
-
-    function resetPage( $outpage, $inpage ) {
-        $outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
-        $inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+        return {outClass: outClass, inClass: inClass};
     }
 
 });

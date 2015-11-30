@@ -114,7 +114,8 @@ html, body { height: 100%; }
   .stripe-content {
     transform: translateY(50%);
 
-    @include respond-to(handheld) { transform: translateY(0%); }
+    @include respond-to(medium-screens) { transform: translateY(0%); }
+    @include respond-to(handhelds) { transform: translateY(0%); }
     @include respond-to(oldschool) { transform: translateY(0%); }
   }
 
@@ -130,23 +131,16 @@ html, body { height: 100%; }
 }
 
 .pt-page-illustration {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#939393+0,b4b4b4+100 */
-  background: #939393; /* Old browsers */
-  background: -moz-linear-gradient(left,  #939393 0%, #b4b4b4 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #939393 0%,#b4b4b4 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #939393 0%,#b4b4b4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#b4b4b4',GradientType=1 ); /* IE6-9 */
+  @include gradient-horizontal(#939393, #b4b4b4, 0%, 100%);
 
 }
 
 .pt-page-soundcloud {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#694e39+0,7f6c5e+100 */
-  background: #694e39; /* Old browsers */
-  background: -moz-linear-gradient(left,  #694e39 0%, #7f6c5e 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #694e39 0%,#7f6c5e 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #694e39 0%,#7f6c5e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#694e39', endColorstr='#7f6c5e',GradientType=1 ); /* IE6-9 */
+  @include gradient-horizontal(#694e39, #7f6c5e, 0%, 100%);
+}
 
+.pt-page-about {
+  @include gradient-horizontal(#60305a, #795772, 0%, 100%);
 }
 
 .pt-page-1 {

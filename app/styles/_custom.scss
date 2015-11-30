@@ -27,13 +27,7 @@ body {
   color: #fff;
   overflow: hidden;
 
-  //@include gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a1a1a+0,2a2a2a+100,3a3a3a+100 */
-  background: #1a1a1a; /* Old browsers */
-  background: -moz-linear-gradient(left,  #1a1a1a 0%, #2a2a2a 100%, #3a3a3a 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #1a1a1a 0%,#2a2a2a 100%,#3a3a3a 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #1a1a1a 0%,#2a2a2a 100%,#3a3a3a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#3a3a3a',GradientType=1 ); /* IE6-9 */
+  @include gradient-horizontal(#1a1a1a, #3a3a3a, 0%, 100%);
 }
 
 a {
@@ -61,6 +55,9 @@ a:hover {
 .navbar-brand {
 
   margin: 70px 0 0 70px;
+  padding: 0;
+  @include respond-to(handhelds) { margin: 16px 0 0 15px; }
+  @include respond-to(oldschool) { margin: 16px 0 0 15px; }
 
   img {
     width: 142px;

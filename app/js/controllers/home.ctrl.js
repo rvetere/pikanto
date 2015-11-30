@@ -45,6 +45,12 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
     function _init() {
         $pages = $main.children( 'div.pt-page' );
+        if ($pages.length < 7) {
+            console.log('not all pages available..');
+            return setTimeout(function() {
+                _init();
+            }, 50);
+        }
         $navs = $('.pt-page-nav li', $main);
         pagesCount = $pages.length;
         $pages.each( function() {

@@ -3,7 +3,11 @@ $navbar-default-bg: transparent;
 @import "../node_modules/node-bourbon/assets/stylesheets/bourbon";
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "../bower_components/ocModal/dist/scss/ocModal.light";
+@import "../bower_components/ocModal/dist/scss/ocModal.animations";
 
+@import "mixins";
+@import "fonts";
+@import "fontastic";
 @import "custom";
 @import "pagetransitions";
 @import "pagecomponent";

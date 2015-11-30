@@ -43,34 +43,110 @@ html, body { height: 100%; }
 }
 
 /* Text Styles, Colors, Backgrounds */
+.pt-page {
 
-.pt-page h1 {
-  position: absolute;
-  font-weight: 300;
-  font-size: 4.4em;
-  line-height: 1;
-  letter-spacing: 6px;
-  margin: 0;
-  top: 12%;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  word-spacing: -0.3em;
+  h1 {
+    font-weight: 300;
+    font-size: 4.4em;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+
+    @include respond-to(handhelds) { font-size: 3em; }
+    @include respond-to(oldschool) { font-size: 2em; margin: 0 0 10px 0; }
+
+    span {
+      font-family: serif;
+      font-weight: 400;
+      font-size: 40%;
+      display: block;
+      opacity: 0.4;
+    }
+
+    strong {
+      color: rgba(0,0,0,0.1);
+    }
+  }
+
+  a {
+    border: 1px solid rgba(255, 255, 255, 1);
+    transition: border-color .3s ease;
+    padding: 20px;
+    outline: none;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  p {
+    line-height: 2;
+    @include respond-to(oldschool) { font-size: .8em; }
+  }
+
+  .stripe-img {
+    width: 100%;
+  }
+
+  .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .bg-video {
+    object-position: 50% 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(18, 8, 42);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .image-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  .stripe-content {
+    transform: translateY(50%);
+
+    @include respond-to(handheld) { transform: translateY(0%); }
+    @include respond-to(oldschool) { transform: translateY(0%); }
+  }
+
 }
 
-.pt-page h1 span {
-  font-family: 'Satisfy', serif;
-  font-weight: 400;
-  font-size: 40%;
-  text-transform: none;
-  word-spacing: 0;
-  letter-spacing: 0;
-  display: block;
-  opacity: 0.4;
+.pt-page-melanie {
+
 }
 
-.pt-page h1 strong {
-  color: rgba(0,0,0,0.1);
+.pt-page-wildstar {
+  background: url('/images/stripes/wildstar_bg.jpg');
+  background-size: cover;
+}
+
+.pt-page-illustration {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#939393+0,b4b4b4+100 */
+  background: #939393; /* Old browsers */
+  background: -moz-linear-gradient(left,  #939393 0%, #b4b4b4 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #939393 0%,#b4b4b4 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #939393 0%,#b4b4b4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#b4b4b4',GradientType=1 ); /* IE6-9 */
+
+}
+
+.pt-page-soundcloud {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#694e39+0,7f6c5e+100 */
+  background: #694e39; /* Old browsers */
+  background: -moz-linear-gradient(left,  #694e39 0%, #7f6c5e 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #694e39 0%,#7f6c5e 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #694e39 0%,#7f6c5e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#694e39', endColorstr='#7f6c5e',GradientType=1 ); /* IE6-9 */
+
 }
 
 .pt-page-1 {
@@ -95,42 +171,4 @@ html, body { height: 100%; }
 
 .pt-page-6 {
   background: #f68dbb;
-}
-
-/* Triggers (menu and button) */
-
-.pt-message {
-  display: none;
-  position: absolute;
-  z-index: 99999;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #da475c;
-  color: #fff;
-  text-align: center;
-}
-
-.pt-message p {
-  margin: 0;
-  line-height: 60px;
-  font-size: 26px;
-}
-
-.no-cssanimations .pt-message {
-  display: block;
-}
-
-@media screen and (max-width: 47.4375em) {
-  .pt-page h1 {
-    font-size: 3em;
-  }
-}
-
-@media screen and (max-height: 45.9em) {
-
-}
-
-@media screen and (max-height: 38em) {
-
 }

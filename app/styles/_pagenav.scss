@@ -1,4 +1,4 @@
-$nav-circle-color:          rgba(33, 33, 33, .5);
+$nav-circle-color:          rgba(121, 121, 121, .5);
 $nav-circle-color-active:   rgba(255, 255, 255, .75);
 $nav-circle-bw:             2px;
 $nav-circle-inner-size:     25;
@@ -42,6 +42,7 @@ ul.pt-page-nav {
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50.2%);
+        transition: background-color .4s ease;
       }
 
       &:before {
@@ -66,12 +67,16 @@ ul.pt-page-nav {
         top: 0;
         left: 0;
         opacity: 0;
-        transition: opacity 0.4s ease;
+        transition: opacity 0.4s ease, color .4s ease;
         font-size: 11px;
         text-transform: uppercase;
         color: $nav-circle-color;
       }
 
+    }
+
+    .divider {
+      padding-bottom: 0;
     }
 
     &.pt-nav-active {
@@ -83,11 +88,11 @@ ul.pt-page-nav {
           opacity: 1;
         }
         &:after {
-          background: $nav-circle-color-active;
+          background: $nav-circle-color-active !important;
         }
 
         span {
-          color: $nav-circle-color-active;
+          color: $nav-circle-color-active !important;
         }
 
       }
@@ -99,11 +104,11 @@ ul.pt-page-nav {
       a {
 
         &:after {
-          background: $nav-circle-color-active;
+          background: $nav-circle-color-active !important;
         }
 
         span {
-          color: $nav-circle-color-active;
+          color: $nav-circle-color-active !important;
         }
 
       }
@@ -124,6 +129,60 @@ ul.pt-page-nav {
 
   }
 
+  &.state-bayer {
+
+    li {
+
+      a {
+
+        &:after {
+          background: lighten($nav-circle-color, 30%);
+        }
+
+        span {
+          color: lighten($nav-circle-color, 30%);
+        }
+
+      }
+    }
+  }
+
+  &.state-wildstar {
+
+    li {
+
+      a {
+
+        &:after {
+          background: darken($nav-circle-color, 30%);
+        }
+
+        span {
+          color: lighten($nav-circle-color, 60%);
+        }
+
+      }
+    }
+  }
+
+  &.state-illustration {
+
+    li {
+
+      a {
+
+        &:after {
+          background: lighten($nav-circle-color, 40%);
+        }
+
+        span {
+          color: lighten($nav-circle-color, 40%);
+        }
+
+      }
+    }
+  }
+
 }
 
 .pt-page-nav-wrap {
@@ -133,6 +192,8 @@ ul.pt-page-nav {
   height: 100%;
   width: $nav-width + 20;
   z-index: 2000;
+
+  @include respond-to(handhelds) { display: none; }
 }
 
 .pt-page:before {

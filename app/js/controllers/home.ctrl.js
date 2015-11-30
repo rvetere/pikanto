@@ -13,6 +13,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         isAnimating = false,
         isWheeling = false,
         isWheelingTimer = null,
+        isWheelingTimer2 = null,
         endCurrPage = false,
         endNextPage = false,
         animEndEventNames = {
@@ -74,18 +75,39 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         mc.on('pan', _handlePan);
         //mc.on('quadrupletap', handleTaps);
 
-        $('body').on('mousewheel', function(ev) {
-            if (isAnimating || isWheeling) {
-                return;
-            }
+        $('body')
+            .on('mousewheel', function(ev) {
+                if (isAnimating || isWheeling) {
+                    return;
+                }
 
-            isWheeling = true;
-            if (ev.deltaY > 0) {
-                _nextPage( 26, -1 );
-            } else {
-                _nextPage( 19, 1 );
-            }
-        });
+                isWheeling = true;
+                if (ev.deltaY > 0) {
+                    _nextPage( 26, -1 );
+                } else {
+                    _nextPage( 19, 1 );
+                }
+
+                clearTimeout(isWheelingTimer2);
+                isWheelingTimer2 = setTimeout(function() {
+                    isWheeling = false;
+                }, 3200);
+            })
+            .on('keyup', function(ev) {
+                switch (ev.keyCode) {
+
+                    case 38: // up
+                        _nextPage( 26, -1 );
+                        break;
+                    case 40: // down
+                        _nextPage( 19, 1 );
+                        break;
+
+                    default:
+                        //console.log(ev.keyCode);
+                        break;
+                }
+            });
 
         $('.pt-page-nav li a', $main).on('mouseover', function(ev) {
             $('body').addClass('pt-hover');
@@ -96,6 +118,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
                 $('body').removeClass('pt-hover');
             }
         });
+
     }
 
     function _handlePan(ev) {
@@ -134,6 +157,11 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
         var $nextPage = $pages.eq( current ).addClass( 'pt-page-current'),
             outClass = '', inClass = '';
+
+        var pageName = $nextPage[0].className.split('pt-page-')[1].split(' ')[0],
+            $pageNav = $navs.parents('ul');
+        $pageNav[0].className = 'pt-page-nav';
+        $pageNav.addClass('state-' + pageName);
 
         $('.pt-nav-active', $main).removeClass('pt-nav-active');
         $navs
@@ -180,6 +208,21 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         isWheelingTimer = setTimeout(function() {
             isWheeling = false;
         }, 600);
+        _onNewPageOpen($outpage, $inpage);
+    }
+
+    function _onNewPageOpen($outpage, $inpage) {
+        // check if there is a video on the current page to play..
+        var $video = $('video', $inpage);
+        if ($video.length) {
+            $video[0].play();
+        }
+
+        // and if there is a video on the old page to stop now..
+        $video = $('video', $outpage);
+        if ($video.length) {
+            $video[0].pause();
+        }
     }
 
     function _resetPage( $outpage, $inpage ) {

@@ -1,6 +1,6 @@
 $break-mini: 320px; // iphone 4
 $break-small: 414px; // iphone 6plus
-$break-large: 1024px;
+$break-large: 1280px;
 
 @mixin respond-to($media) {
   @if $media == oldschool {
@@ -24,4 +24,15 @@ $break-large: 1024px;
     font-weight: #{$weight};
     font-style: normal;
   }
+}
+
+// firefox compatible gradient with fallback to a base color (first one)
+@mixin gradient-horizontal-ff($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background: $start-color; // Old browsers
+  background: -moz-linear-gradient(left,  $start-color $start-percent, $end-color $end-percent); // FF3.6-15
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }

@@ -1,0 +1,19 @@
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 4/2),
+only screen and (min-device-pixel-ratio: 2) {
+
+  .navbar-brand img {
+    background: url('/images/logo@2x.png');
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (-moz-min-device-pixel-ratio: 3),
+only screen and (-o-min-device-pixel-ratio: 4/3),
+only screen and (min-device-pixel-ratio: 3) {
+
+  .navbar-brand img {
+    background: url('/images/logo@2x.png');
+  }
+}

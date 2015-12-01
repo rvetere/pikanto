@@ -1,6 +1,6 @@
-$nav-circle-color:          rgba(121, 121, 121, .5);
-$nav-circle-color-active:   rgba(255, 255, 255, .75);
-$nav-circle-bw:             2px;
+$nav-circle-color:          rgba(255, 255, 255, .4);
+$nav-circle-color-active:   rgba(255, 255, 255, 1);
+$nav-circle-bw:             1px;
 $nav-circle-inner-size:     25;
 $nav-width:                 22px;
 $nav-height:                22px;
@@ -35,7 +35,7 @@ ul.pt-page-nav {
         content: '';
         display: block;
         background: $nav-circle-color;
-        border-radius: ($nav-width-small / 2) + 2;
+        border-radius: $nav-width-small;
         width: $nav-width-small;
         height: $nav-height-small;
         position: absolute;
@@ -142,11 +142,11 @@ ul.pt-page-nav {
       a {
 
         &:after {
-          background: lighten($nav-circle-color, 30%);
+          //background: lighten($nav-circle-color, 30%);
         }
 
         span {
-          color: lighten($nav-circle-color, 30%);
+          //color: lighten($nav-circle-color, 30%);
         }
 
       }
@@ -160,11 +160,11 @@ ul.pt-page-nav {
       a {
 
         &:after {
-          background: darken($nav-circle-color, 30%);
+          //background: darken($nav-circle-color, 30%);
         }
 
         span {
-          color: lighten($nav-circle-color, 60%);
+          //color: lighten($nav-circle-color, 60%);
         }
 
       }
@@ -178,11 +178,11 @@ ul.pt-page-nav {
       a {
 
         &:after {
-          background: lighten($nav-circle-color, 40%);
+          //background: lighten($nav-circle-color, 40%);
         }
 
         span {
-          color: lighten($nav-circle-color, 40%);
+          //color: lighten($nav-circle-color, 40%);
         }
 
       }

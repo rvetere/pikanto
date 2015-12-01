@@ -47,10 +47,11 @@ html, body { height: 100%; }
 
   h1 {
     font-weight: 300;
-    font-size: 4.4em;
+    font-size: 3.75em;
     line-height: 1.2;
     margin: 0 0 20px 0;
 
+    @include respond-to(medium-screens) { font-size: 2.3em; }
     @include respond-to(handhelds) { font-size: 3em; }
     @include respond-to(oldschool) { font-size: 2em; margin: 0 0 10px 0; }
 
@@ -69,22 +70,46 @@ html, body { height: 100%; }
 
   a {
     border: 1px solid rgba(255, 255, 255, 1);
-    transition: border-color .3s ease;
+    transition: border-color .3s ease, color .3s ease;
     padding: 20px;
     outline: none;
 
+    @include respond-to(handhelds) { padding: 10px; }
+    @include respond-to(oldschool) { padding: 10px; }
+
     &:hover {
       border-color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.2);
     }
   }
 
   p {
+    font-size: 1.125em;
     line-height: 2;
+    @include respond-to(medium-screens) { margin-bottom: 3em; }
     @include respond-to(oldschool) { font-size: .8em; }
   }
 
   .stripe-img {
     width: 100%;
+    @include respond-to(medium-screens) { width: 90%; }
+  }
+
+  &.pt-page-kitten {
+    .stripe-img {
+      @include respond-to(medium-screens) { width: 60%; margin-left: 20%; }
+      @include respond-to(handhelds) { width: 60%; margin-left: 20%; }
+      @include respond-to(oldschool) { width: 60%; margin-left: 20%; }
+    }
+  }
+
+  &.pt-page-about {
+    .stripe-img {
+      @include respond-to(medium-screens) { width: 50%; margin-left: 35%; margin-top: -16%; }
+      @include respond-to(handhelds) { width: 50%; margin-left: 45%; margin-top: 0; }
+      @include respond-to(oldschool) { width: 50%; margin-left: 45%; margin-top: 0; }
+    }
   }
 
   .container {
@@ -93,7 +118,8 @@ html, body { height: 100%; }
     transform: translateY(-50%);
   }
 
-  .bg-video {
+  .bg-video,
+  .bg-video-fallback {
     object-position: 50% 50%;
     object-fit: cover;
     width: 100%;
@@ -104,25 +130,102 @@ html, body { height: 100%; }
     left: 0;
   }
 
-  .image-video {
+  .bg-video-fallback {
+    @include respond-to(wide-screens) { display: none; }
+  }
+
+  .bg-video {
+    @include respond-to(medium-screens) { display: none; }
+    @include respond-to(handhelds) { display: none; }
+    @include respond-to(oldschool) { display: none; }
+  }
+
+  .image-video,
+  .image-video-fallback {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+    max-width: 80%;
+  }
+
+  .image-video-fallback {
+    @include respond-to(wide-screens) { display: none; }
+  }
+
+  .image-video {
+    @include respond-to(medium-screens) { display: none; }
+    @include respond-to(handhelds) { display: none; }
+    @include respond-to(oldschool) { display: none; }
   }
 
   .stripe-content {
     transform: translateY(50%);
+    margin-top: 8%;
 
     @include respond-to(medium-screens) { transform: translateY(0%); }
     @include respond-to(handhelds) { transform: translateY(0%); }
     @include respond-to(oldschool) { transform: translateY(0%); }
   }
 
+  .wide-screen {
+    @include respond-to(medium-screens) { display: none; }
+    @include respond-to(handhelds) { display: none; }
+    @include respond-to(oldschool) { display: none; }
+  }
+
+  .mobile {
+    @include respond-to(wide-screens) { display: none; }
+  }
+
+  .hover-img {
+    width: 100%;
+    background-size: 100% !important;
+    overflow: hidden;
+    position: relative;
+    transition: transform .4s ease;
+
+    img {
+      transition: opacity 1s ease;
+
+      &:hover {
+        opacity: 0;
+      }
+    }
+
+    &.changed {
+
+      &.secondary {
+        transform: translateX(0);
+        //animation-name: rubberBand;
+        //animation-duration: 1s;
+        //animation-fill-mode: both;
+      }
+
+    }
+
+    &.secondary {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(-100%);
+    }
+  }
+
+  .contact-form {
+    margin-top: 100px;
+    @include respond-to(medium-screens) { width: 90%; }
+    @include respond-to(handhelds) { margin-top: 0; }
+
+    label {
+      font-weight: normal;
+    }
+  }
+
 }
 
 .pt-page-melanie {
-
+  @include gradient-horizontal-ff(#1a1a1a, #2a2a2a, 0%, 100%);
 }
 
 .pt-page-wildstar {
@@ -131,38 +234,35 @@ html, body { height: 100%; }
 }
 
 .pt-page-illustration {
-  @include gradient-horizontal(#939393, #b4b4b4, 0%, 100%);
+  @include gradient-horizontal-ff(#939393, #b4b4b4, 0%, 100%);
 
 }
 
 .pt-page-soundcloud {
-  @include gradient-horizontal(#694e39, #7f6c5e, 0%, 100%);
+  @include gradient-horizontal-ff(#694e39, #7f6c5e, 0%, 100%);
 }
 
 .pt-page-about {
-  @include gradient-horizontal(#60305a, #795772, 0%, 100%);
+  @include gradient-horizontal-ff(#60305a, #795772, 0%, 100%);
 }
 
-.pt-page-1 {
-  background: #0ac2d2;
+.pt-page-contact {
+  @include gradient-horizontal-ff(#7297ff, #3fcff6, 0%, 100%);
 }
 
-.pt-page-2 {
-  background: #7bb7fa;
-}
-
-.pt-page-3 {
-  background: #60d7a9;
-}
-
-.pt-page-4 {
-  background: #fdc162;
-}
-
-.pt-page-5 {
-  background: #fd6a62;
-}
-
-.pt-page-6 {
-  background: #f68dbb;
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12 {
+  &.nopadding {
+    padding: 0;
+  }
 }

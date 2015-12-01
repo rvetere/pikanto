@@ -5,23 +5,6 @@ $navbar-default-bg: transparent;
 @import "../bower_components/ocModal/dist/scss/ocModal.light";
 @import "../bower_components/ocModal/dist/scss/ocModal.animations";
 
-.col-md-1,
-.col-md-2,
-.col-md-3,
-.col-md-4,
-.col-md-5,
-.col-md-6,
-.col-md-7,
-.col-md-8,
-.col-md-9,
-.col-md-10,
-.col-md-11,
-.col-md-12 {
-	&.nopadding {
-		padding: 0;
-	}
-}
-
 @import "mixins";
 @import "fonts";
 @import "fontastic";
@@ -29,3 +12,4 @@ $navbar-default-bg: transparent;
 @import "pagetransitions";
 @import "pagecomponent";
 @import "pagenav";
+@import "retina";

@@ -10,6 +10,9 @@ body, html {
   font-size: 100%;
   padding: 0;
   margin: 0;
+
+  @include respond-to(handhelds) { font-size: 80%; }
+  @include respond-to(oldschool) { font-size: 80%; }
 }
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
@@ -27,7 +30,7 @@ body {
   color: #fff;
   overflow: hidden;
 
-  @include gradient-horizontal(#1a1a1a, #3a3a3a, 0%, 100%);
+  @include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);
 }
 
 a {
@@ -56,17 +59,38 @@ a:hover {
 
   margin: 70px 0 0 70px;
   padding: 0;
-  @include respond-to(handhelds) { margin: 16px 0 0 15px; }
-  @include respond-to(oldschool) { margin: 16px 0 0 15px; }
 
-  img {
-    width: 142px;
-    height: 41px;
+  @include respond-to(medium-screens) { margin: 32px 0 0 32px; }
+  @include respond-to(handhelds) { margin: 16px 0 0 10px; }
+  @include respond-to(oldschool) { margin: 16px 0 0 10px; background-size: 120px; width: 120px; }
 
-    @include respond-to(handhelds) { width: 80px; height: auto; }
-  }
+  background: url('/images/logo.png') no-repeat;
+  background-size: 200px 58px;
+  width: 200px;
+  height: 58px;
+  text-indent: -10000px;
 }
 
-@media screen and (max-width: 25em) {
+.btn-pikanto {
+  border: 1px solid white;
+  outline: 0;
+  border-radius: 0;
+  background: none;
+}
+.form-control {
+  border-radius: 0;
+}
 
+.navbar-toggle {
+  display: none;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  background-color: rgba(177, 30, 40, 0.8);
+}
+
+input.ng-valid.ng-touched,
+textarea.ng-valid.ng-touched {
+  background-color: #1299d0;
 }

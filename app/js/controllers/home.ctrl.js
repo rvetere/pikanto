@@ -27,8 +27,12 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
     // support css animations
         support = Modernizr.cssanimations;
 
+    var viewportW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var viewportH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
     $timeout(function() {
         _init();
+        _initImageFlipper();
     }, 100);
 
     // public functions
@@ -36,8 +40,10 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
     function selectStripe(index) {
         if (index > current) {
             _nextPage( 19, index, true );
+            $('body').removeClass('pt-hover');
         } else {
             _nextPage( 26, index, true );
+            $('body').removeClass('pt-hover');
         }
     }
 
@@ -60,17 +66,6 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
         $pages.eq( current ).addClass( 'pt-page-current' );
         $navs.eq( current ).addClass( 'pt-nav-active' );
-
-        $iterate.on( 'click', function() {
-            if( isAnimating ) {
-                return false;
-            }
-            if( animcursor > 67 ) {
-                animcursor = 1;
-            }
-            _nextPage( animcursor );
-            ++animcursor;
-        } );
 
         var hammerEl = $('#pt-main')[0],
             mc = new Hammer.Manager(hammerEl, {});
@@ -124,6 +119,36 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
                 $('body').removeClass('pt-hover');
             }
         });
+
+    }
+
+    function _initImageFlipper() {
+        var $imgs = [];
+        $('.image-flipper .hover-img:not(.secondary)').each(function(i, el) {
+            if ($(el).find('.secondary').length) {
+                $imgs.push(el);
+            }
+        });
+
+        var min = 3000, max = 6000;
+        var _changeImg = function() {
+            // change the image to it's secondary src in a nice animation, safe the current url as data-first
+            if ($(this).find('.secondary').hasClass('changed')) {
+                $(this).find('.secondary').removeClass('changed');
+            } else {
+                $(this).find('.secondary').addClass('changed');
+            }
+
+            var rnd = Math.random() * (max - min) + min;
+            setTimeout(_changeImg.bind(this), rnd);
+        };
+
+        // giving the intervals some bounds..
+        for (var i = 0, len = $imgs.length; i < len; i++) {
+            // change every image in a randomly chosen interval..
+            var rnd = Math.random() * (max - min) + min;
+            setTimeout(_changeImg.bind($imgs[i]), rnd);
+        }
 
     }
 

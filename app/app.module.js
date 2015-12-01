@@ -3,10 +3,10 @@ angular.module('app', ['ngSanitize', 'ngResource', 'ui.router', 'oc.modal'])
 	.constant('VERSION', '0.7.0')
 	.config(function appConfig($stateProvider, $locationProvider, $urlRouterProvider) {
 		$locationProvider.hashPrefix('!');
-		$urlRouterProvider.otherwise("/home");
+		$urlRouterProvider.otherwise("/");
 
 		$stateProvider.state('home', {
-			url: "/home", // root route
+			url: "/", // root route
 			views: {
 				"mainView": {
 					templateUrl: "partials/home.html",

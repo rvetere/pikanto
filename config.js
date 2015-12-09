@@ -76,6 +76,9 @@ exports.config = {
 				"ie >= 9"
 			],
 			cascade: false
+		},
+		sass: {
+			options: ['--sourcemap']
 		}
 	},
 

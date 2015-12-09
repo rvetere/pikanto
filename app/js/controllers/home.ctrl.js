@@ -162,6 +162,8 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
     function _nextPage( animation, step, force ) {
 
+        return;
+
         if( isAnimating ) {
             return false;
         }
@@ -195,16 +197,22 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         $pageNav.addClass('state-' + pageName);
 
         $('.pt-nav-active', $main).removeClass('pt-nav-active');
-        $navs
+        var $li = $navs
             .eq( current )
             .addClass( 'pt-nav-active' )
-            .addClass( 'animated' )
-            .addClass( 'pulse' )
-            .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-                $(this)
-                    .removeClass('animated')
-                    .removeClass('pulse');
-            });
+            //.addClass( 'animated' )
+            //.addClass( 'pulse' )
+            //.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            //    $(this)
+            //        .removeClass('animated')
+            //        .removeClass('pulse');
+            //});
+            ;
+        //setTimeout(function() {
+        //    $(this)
+        //        .removeClass('animated')
+        //        .removeClass('pulse');
+        //}.bind($li[0]), 600);
 
         var __ret = _getAnimClasses(animation, outClass, inClass);
 

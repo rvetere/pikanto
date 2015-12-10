@@ -42,14 +42,24 @@ html, body { height: 100%; }
 //  z-index: 999;
 //}
 
+
+.pt-page {
+  width: 100%;
+	display: inline-block;
+}
+
+
 /* Text Styles, Colors, Backgrounds */
 .pt-page {
 
   h1 {
+	font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    font-size: 3.75em;
-    line-height: 1.2;
+    font-size: 2.5em;
+    line-height: 1.5;
     margin: 0 0 20px 0;
+	border-bottom: 1px solid #34c9cb;
+	width: 100%;
 
     @include respond-to(medium-screens) { font-size: 2.3em; }
     @include respond-to(handhelds) { font-size: 3em; }
@@ -69,34 +79,51 @@ html, body { height: 100%; }
   }
 
   a {
-    border: 1px solid rgba(255, 255, 255, 1);
-    transition: border-color .3s ease, color .3s ease;
-    padding: 20px;
+	color: #34c9cb;
+    transition: color .3s ease;
     outline: none;
-
-    @include respond-to(handhelds) { padding: 10px; }
-    @include respond-to(oldschool) { padding: 10px; }
+    font-weight: 400;
 
     &:hover {
-      border-color: rgba(255, 255, 255, 0.2);
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.2);
+      color: #4E5A5E;
     }
   }
 
   p {
-    font-size: 1.125em;
-    line-height: 2;
-    @include respond-to(medium-screens) { margin-bottom: 3em; }
-    @include respond-to(oldschool) { font-size: .8em; }
+    font-size: 1em;
+    line-height: 1.4;
+    width: 50%;
+	margin: 0 0 1.2em 0;
+    @include respond-to(medium-screens) { width: 100%; }
+	@include respond-to(handhelds) { width: 100%; }
+    @include respond-to(oldschool) { width: 100%; }
+  }
+  
+  .float-right {
+	float: right;
+	text-align: right;
+    @include respond-to(medium-screens) { float: none; text-align: left; }
+	@include respond-to(handhelds) { float: none; text-align: left; }
+    @include respond-to(oldschool) { float: none; text-align: left; }
   }
 
   .stripe-img {
-    width: 100%;
-    @include respond-to(medium-screens) { width: 90%; }
+    width: 50%;
+	float: left;
+    @include respond-to(medium-screens) { width: 100%; margin: 0; }
+	@include respond-to(handhelds) { width: 100%; margin: 0; }
+    @include respond-to(oldschool) { width: 100%; margin: 0; }
+  }
+  
+  .stripe-img.float-right {
+	float: right;
+    @include respond-to(medium-screens) { width: 100%; float: none; }
+	@include respond-to(handhelds) { width: 100%; float: none; }
+    @include respond-to(oldschool) { width: 100%; float: none; }
   }
 
-  &.pt-page-kitten {
+ /* &.pt-page-kitten {
     .stripe-img {
       @include respond-to(medium-screens) { width: 60%; margin-left: 20%; }
       @include respond-to(handhelds) { width: 60%; margin-left: 20%; }
@@ -110,24 +137,38 @@ html, body { height: 100%; }
       @include respond-to(handhelds) { width: 50%; margin-left: 45%; margin-top: 0; }
       @include respond-to(oldschool) { width: 50%; margin-left: 45%; margin-top: 0; }
     }
-  }
+  }*/
 
   .container {
     position: relative;
-    //top: 50%;
-    //transform: translateY(-50%);
+	margin: 0 auto 180px auto;
+	padding: 0 15px;
   }
+  
+  .row {
+		margin: 0;
+	}
+	
+	.rider {
+		margin: 0;
+		line-height: 0.5;
+		letter-spacing: 3px;
+		font-family: 'Oswald', sans-serif;
+    	font-weight: 300;
+    	font-size: 1em;
+	}
+
+   .video-holder {
+		overflow: hidden;
+		width: 100%;
+		height: 360px;
+		padding: 0px;
+	}
 
   .bg-video,
   .bg-video-fallback {
-    object-position: 50% 50%;
-    object-fit: cover;
     width: 100%;
-    height: 100%;
-    background-color: rgb(18, 8, 42);
-    //position: absolute;
-    //top: 0;
-    //left: 0;
+    background-color: #fff;
   }
 
   .bg-video-fallback {
@@ -146,7 +187,8 @@ html, body { height: 100%; }
     //top: 50%;
     //left: 50%;
     //transform: translateY(-50%) translateX(-50%);
-    max-width: 80%;
+    max-width: 100%;
+	margin: 0 auto 60px auto;
   }
 
   .image-video-fallback {
@@ -159,14 +201,14 @@ html, body { height: 100%; }
     @include respond-to(oldschool) { display: none; }
   }
 
-  .stripe-content {
+  /*.stripe-content {
     transform: translateY(50%);
     margin-top: 8%;
 
     @include respond-to(medium-screens) { transform: translateY(0%); }
     @include respond-to(handhelds) { transform: translateY(0%); }
     @include respond-to(oldschool) { transform: translateY(0%); }
-  }
+  }*/
 
   .wide-screen {
     @include respond-to(medium-screens) { display: none; }
@@ -224,18 +266,27 @@ html, body { height: 100%; }
 
 }
 
-.pt-page-melanie {
-  @include gradient-horizontal-ff(#1a1a1a, #2a2a2a, 0%, 100%);
-}
-
-.pt-page-wildstar {
-  background: url('/images/stripes/wildstar_bg.jpg');
-  background-size: cover;
+.pt-page-melanie, .pt-page-about, .pt-page-illustration, .pt-page-wildstar, .pt-page-contact {
+  /*@include gradient-horizontal-ff(#1a1a1a, #2a2a2a, 0%, 100%);*/
+  box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.3);
+  padding-top: 120px;
 }
 
 .pt-page-illustration {
-  @include gradient-horizontal-ff(#939393, #b4b4b4, 0%, 100%);
+  /*@include gradient-horizontal-ff(#939393, #b4b4b4, 0%, 100%);*/
+  background-color: #1b81b1;
+  color: #fff;
+}
 
+.pt-page-contact {
+  /*@include gradient-horizontal-ff(#939393, #b4b4b4, 0%, 100%);*/
+  background-color: #0b7399;
+  color: #fff;
+}
+
+/*.pt-page-wildstar {
+  background: url('/images/stripes/wildstar_bg.jpg');
+  background-size: cover;
 }
 
 .pt-page-soundcloud {
@@ -248,6 +299,17 @@ html, body { height: 100%; }
 
 .pt-page-contact {
   @include gradient-horizontal-ff(#7297ff, #3fcff6, 0%, 100%);
+}*/
+
+.col-md-3 {
+	padding: 0px;
+	margin: 0px;
+}
+
+
+.col-md-12 {
+	clear: both;
+	padding: 0px;
 }
 
 .col-md-1,
@@ -266,3 +328,4 @@ html, body { height: 100%; }
     padding: 0;
   }
 }
+

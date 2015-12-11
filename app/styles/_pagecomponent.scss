@@ -108,8 +108,11 @@ html, body { height: 100%; }
     @include respond-to(oldschool) { float: none; text-align: left; }
   }
 
+    .image-flipper .stripe-img {
+      width: 100%;
+  }
   .stripe-img {
-    width: 100%;
+    width: 50%;
 	float: left;
     @include respond-to(medium-screens) { width: 100%; margin: 0; }
 	@include respond-to(handhelds) { width: 100%; margin: 0; }

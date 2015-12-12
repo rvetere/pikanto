@@ -56,14 +56,23 @@ a:hover {
   display: none;
 }
 
-.navbar-brand {
+.navbar-header {
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100px;
+    background-color: #fff;
+    position: fixed;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+    width: 500px;
+    height: 100px;
     background: url("/images/logo-green.png") no-repeat;
     background-size: 150px 43.5px;
-    background-position: 30px 30px;
+    background-position: 150px 30px;
     text-indent: -10000px;
     background-color: #fff;
     position: fixed;
@@ -71,10 +80,146 @@ a:hover {
 	background: url("/images/logo.png") no-repeat;
 	background-size: 200px 58px;
     background-color: transparent;*/
+}
 
-  @include respond-to(medium-screens) { margin: 32px 0 0 32px; }
-  @include respond-to(handhelds) { margin: 16px 0 0 10px; }
-  @include respond-to(oldschool) { margin: 16px 0 0 10px; background-size: 120px; width: 120px; }
+.pt-nav {
+	float: right;
+    padding: 30px 60px 30px 0;
+    height: 100px;
+}
+
+div.info-text {
+	color: #4E5A5E;
+	font-size: 0.8em;
+	line-height: 1em;
+	position: absolute;
+	right: 240px;
+    top: 45px;
+	
+	@include respond-to(medium-screens) { display: none; }
+	@include respond-to(handhelds) { display: none; }
+    @include respond-to(oldschool) { display: none; }
+}
+
+div.info-text span {
+	padding: 0 6px;
+}
+
+.pt-nav a {
+	color: #34c9cb;
+	font-size: 2.2em;
+	padding: 0 0 0 10px;
+	transition: color .3s ease;
+	text-decoration: none;
+	
+	@include respond-to(medium-screens) { display: none; }
+	@include respond-to(handhelds) { display: none; }
+    @include respond-to(oldschool) { display: none; }
+}
+
+.pt-nav a.icn-burger {
+	padding: 0 0 0 36px;
+	font-size: 2.2em;
+	
+	@include respond-to(medium-screens) { display: block; }
+	@include respond-to(handhelds) { display: block; }
+    @include respond-to(oldschool) { display: block; }
+}
+
+.pt-nav a:hover {
+	color: #4E5A5E;
+}
+
+.wellcome {
+	padding-top: 120px !important;
+}
+
+.wellcome div {
+	width: 25%;
+	float: left;
+	text-align:	center;
+	margin: 60px 0 0 0;
+	
+	@include respond-to(medium-screens) { width: 50%; height: 260px;}
+	@include respond-to(handhelds) { width: 50%; height: 180px; }
+    @include respond-to(oldschool) { width: 100%; float: none; margin: 20px 0 0 0; }
+}
+
+.wellcome span {
+	width: 100% !important;
+	margin: 0  0 40px 0 !important;
+	padding: 0px;
+    line-height: 0.5;
+    letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.wellcome div h2 {
+	font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 2;
+    border-bottom: 1px solid #34c9cb;
+    width: 70%;
+    margin: 0 0 15px 15%;
+	
+	@include respond-to(handhelds) { width: 80%; margin: 0 0 15px 10%; }
+}
+
+.wellcome div p {
+    width: 70%;
+    margin: 0 0 15px 15%;
+	font-family: 'Raleway', Calibri, Arial, sans-serif;
+}
+
+.wellcome div a {
+	color: #4E5A5E;
+	font-size: 5em;
+	display: block;
+}
+
+.wellcome div a:hover {
+	
+}
+
+.wellcome.touch {
+	width: 100%;
+	text-align:	center;
+	display: inline-block;
+	background-color: #0f5670;
+	padding: 0px !important;
+	
+	@include respond-to(medium-screens) { height: 320px; }
+}
+
+.wellcome.touch div {
+	width: 25%;
+	float: left;
+	text-align:	center;
+	margin: 0 0 0 37.5%;
+	padding: 30px 0;
+	color: #fff;
+	
+	@include respond-to(medium-screens) { width: 50%; margin: 0 0 0 25%; }
+	@include respond-to(handhelds) { width: 50%;  margin: 0 0 0 25%; height: 230px; }
+    @include respond-to(oldschool) { width: 100%;  margin: 0; }
+}
+
+.wellcome.touch div a {
+	color: #fff;
+}
+
+.wellcome.touch div a.mail {
+	color: #34c9cb;
+	font-size: 1em;
+	outline: none;
+    font-weight: 400;
+}
+
+.wellcome.touch div a.mail:hover {
+	color: #fff;
 }
 
 .btn-pikanto {

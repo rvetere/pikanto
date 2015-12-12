@@ -146,6 +146,18 @@ html, body { height: 100%; }
     position: relative;
 	margin: 0 auto 180px auto;
 	padding: 0 15px;
+	
+	@include respond-to(medium-screens) { padding: 0 50px; margin: 0 auto 180px auto; }
+	@include respond-to(handhelds) { padding: 0 30px; margin: 0 auto 60px auto; }
+    @include respond-to(oldschool) { padding: 0 30px; margin: 0 auto 40px auto; }
+  }
+  
+  .container.small-space {
+	margin: 0 auto 60px auto;
+	
+	@include respond-to(medium-screens) { margin: 0 auto 60px auto; }
+	@include respond-to(handhelds) { margin: 0 auto 40px auto; }
+    @include respond-to(oldschool) { margin: 0 auto 40px auto; }
   }
   
   .row {
@@ -190,12 +202,8 @@ html, body { height: 100%; }
 
   .image-video,
   .image-video-fallback {
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //transform: translateY(-50%) translateX(-50%);
     max-width: 100%;
-	margin: 0 auto 60px auto;
+	margin: 0 auto 0 auto;
   }
 
   .image-video-fallback {
@@ -273,10 +281,13 @@ html, body { height: 100%; }
 
 }
 
-.pt-page-melanie, .pt-page-about, .pt-page-illustration, .pt-page-wildstar, .pt-page-contact {
+.pt-page-bayer,.pt-page-melanie, .pt-page-about, .pt-page-illustration, .pt-page-wildstar, .pt-page-contact {
   /*@include gradient-horizontal-ff(#1a1a1a, #2a2a2a, 0%, 100%);*/
   box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.3);
   padding-top: 120px;
+  
+	@include respond-to(handhelds) { padding-top: 30px; }
+    @include respond-to(oldschool) { padding-top: 30px; }
 }
 
 .pt-page-illustration {
@@ -289,6 +300,7 @@ html, body { height: 100%; }
   /*@include gradient-horizontal-ff(#939393, #b4b4b4, 0%, 100%);*/
   background-color: #0b7399;
   color: #fff;
+  display: inline-block;
 }
 
 /*.pt-page-wildstar {

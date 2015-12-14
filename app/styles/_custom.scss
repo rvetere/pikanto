@@ -1,91 +1,137 @@
 /* General Demo Style */
 
 *, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body, html {
-  font-size: 100%;
-  padding: 0;
-  margin: 0;
+	font-size: 100%;
+	padding: 0;
+	margin: 0;
 
-  @include respond-to(handhelds) { font-size: 80%; }
-  @include respond-to(oldschool) { font-size: 80%; }
+	@include respond-to(handhelds) {
+		font-size: 80%;
+	}
+	@include respond-to(oldschool) {
+		font-size: 80%;
+	}
 }
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
+	content: " ";
+	display: table;
 }
 
 .clearfix:after {
-  clear: both;
+	clear: both;
 }
 
 body {
-  font-family: 'Raleway', Calibri, Arial, sans-serif;
-  color: #4E5A5E;
-  background-color: #FAFAFA;
-  font-weight: 300;
+	font-family: 'Raleway', Calibri, Arial, sans-serif;
+	color: #4E5A5E;
+	background-color: #FAFAFA;
+	font-weight: 300;
 
-  /*@include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);*/
+	/*@include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);*/
 }
 
 a {
-  color: #ddd;
-  text-decoration: none;
+	color: #ddd;
+	text-decoration: none;
 
-  &:focus, &:visited {
-    color: #ddd;
-    text-decoration: none;
-  }
+	&:focus, &:visited {
+		color: #ddd;
+		text-decoration: none;
+	}
 }
 
 a:hover {
-  color: #fff;
+	color: #fff;
 }
 
 .wrapper, .main-content, .view {
-  height: 100%;
+	height: 100%;
 }
 
 .navbar-nav {
-  display: none;
+	display: none;
 }
 
 .navbar-header {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #fff;
-    position: fixed;
-}
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100px;
+	transition: background-color 0.8s ease;
 
-.navbar-brand {
-    padding: 0;
-    margin: 0;
-    width: 500px;
-    height: 100px;
-    background: url("/images/logo-green.png") no-repeat;
-    background-size: 150px 43.5px;
-    background-position: 150px 30px;
-    text-indent: -10000px;
-    background-color: #fff;
-    position: fixed;
-	/*  solange das logo über dem image video ist, dieses css, danach das css wie jetzt
-	background: url("/images/logo.png") no-repeat;
-	background-size: 200px 58px;
-    background-color: transparent;*/
+	.info-text, .pt-nav {
+		opacity: 0;
+		transition: opacity .8s ease;
+	}
+
+	.navbar-brand {
+
+		svg {
+			display: block;
+			width: 200px;
+			height: 58px;
+			transition: all .8s ease;
+
+			.st0{ fill: #fff; }
+		}
+		span {
+			color: #fff;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 100;
+			font-size: .7em;
+			font-style: italic;
+			position: relative;
+			top: -18px;
+			left: 14px;
+		}
+		padding: 0;
+		margin: 29px 0 0 32px;
+		width: 200px;
+		height: 58px;
+		text-indent: -10000px;
+	}
+
+	&.affix-top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+
+		.info-text, .pt-nav {
+			opacity: 1;
+		}
+
+		.navbar-brand {
+			svg {
+				display: block;
+				width: 150px;
+				height: 43.5px;
+
+				.st0{ fill: #34c9cb; }
+			}
+			span {
+				color: #34c9cb;
+				font-size: .6em;
+				left: 10px;
+			}
+			background-size: 150px 43.5px;
+			background-position: 150px 30px;
+		}
+	}
 }
 
 .pt-nav {
 	float: right;
-    padding: 30px 60px 30px 0;
-    height: 100px;
+	padding: 30px 60px 30px 0;
+	height: 100px;
 }
 
 div.info-text {
@@ -94,11 +140,17 @@ div.info-text {
 	line-height: 1em;
 	position: absolute;
 	right: 240px;
-    top: 45px;
+	top: 45px;
 	
-	@include respond-to(medium-screens) { display: none; }
-	@include respond-to(handhelds) { display: none; }
-    @include respond-to(oldschool) { display: none; }
+	@include respond-to(medium-screens) {
+		display: none;
+	}
+	@include respond-to(handhelds) {
+		display: none;
+	}
+	@include respond-to(oldschool) {
+		display: none;
+	}
 }
 
 div.info-text span {
@@ -112,18 +164,30 @@ div.info-text span {
 	transition: color .3s ease;
 	text-decoration: none;
 	
-	@include respond-to(medium-screens) { display: none; }
-	@include respond-to(handhelds) { display: none; }
-    @include respond-to(oldschool) { display: none; }
+	@include respond-to(medium-screens) {
+		display: none;
+	}
+	@include respond-to(handhelds) {
+		display: none;
+	}
+	@include respond-to(oldschool) {
+		display: none;
+	}
 }
 
 .pt-nav a.icn-burger {
 	padding: 0 0 0 36px;
 	font-size: 2.2em;
 	
-	@include respond-to(medium-screens) { display: block; }
-	@include respond-to(handhelds) { display: block; }
-    @include respond-to(oldschool) { display: block; }
+	@include respond-to(medium-screens) {
+		display: block;
+	}
+	@include respond-to(handhelds) {
+		display: block;
+	}
+	@include respond-to(oldschool) {
+		display: block;
+	}
 }
 
 .pt-nav a:hover {
@@ -137,40 +201,53 @@ div.info-text span {
 .wellcome div {
 	width: 25%;
 	float: left;
-	text-align:	center;
+	text-align: center;
 	margin: 60px 0 0 0;
 	
-	@include respond-to(medium-screens) { width: 50%; height: 260px;}
-	@include respond-to(handhelds) { width: 50%; height: 180px; }
-    @include respond-to(oldschool) { width: 100%; float: none; margin: 20px 0 0 0; }
+	@include respond-to(medium-screens) {
+		width: 50%;
+		height: 260px;
+	}
+	@include respond-to(handhelds) {
+		width: 50%;
+		height: 180px;
+	}
+	@include respond-to(oldschool) {
+		width: 100%;
+		float: none;
+		margin: 20px 0 0 0;
+	}
 }
 
 .wellcome span {
 	width: 100% !important;
-	margin: 0  0 40px 0 !important;
+	margin: 0 0 40px 0 !important;
 	padding: 0px;
-    line-height: 0.5;
-    letter-spacing: 3px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-    font-size: 1em;
+	line-height: 0.5;
+	letter-spacing: 3px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 1em;
 }
 
 .wellcome div h2 {
 	font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-    font-size: 1.5em;
-    line-height: 2;
-    border-bottom: 1px solid #34c9cb;
-    width: 70%;
-    margin: 0 0 15px 15%;
+	font-weight: 300;
+	font-size: 1.5em;
+	line-height: 2;
+	border-bottom: 1px solid #34c9cb;
+	width: 70%;
+	margin: 0 0 15px 15%;
 	
-	@include respond-to(handhelds) { width: 80%; margin: 0 0 15px 10%; }
+	@include respond-to(handhelds) {
+		width: 80%;
+		margin: 0 0 15px 10%;
+	}
 }
 
 .wellcome div p {
-    width: 70%;
-    margin: 0 0 15px 15%;
+	width: 70%;
+	margin: 0 0 15px 15%;
 	font-family: 'Raleway', Calibri, Arial, sans-serif;
 }
 
@@ -186,25 +263,37 @@ div.info-text span {
 
 .wellcome.touch {
 	width: 100%;
-	text-align:	center;
+	text-align: center;
 	display: inline-block;
 	background-color: #0f5670;
 	padding: 0px !important;
 	
-	@include respond-to(medium-screens) { height: 320px; }
+	@include respond-to(medium-screens) {
+		height: 320px;
+	}
 }
 
 .wellcome.touch div {
 	width: 25%;
 	float: left;
-	text-align:	center;
+	text-align: center;
 	margin: 0 0 0 37.5%;
 	padding: 30px 0;
 	color: #fff;
 	
-	@include respond-to(medium-screens) { width: 50%; margin: 0 0 0 25%; }
-	@include respond-to(handhelds) { width: 50%;  margin: 0 0 0 25%; height: 230px; }
-    @include respond-to(oldschool) { width: 100%;  margin: 0; }
+	@include respond-to(medium-screens) {
+		width: 50%;
+		margin: 0 0 0 25%;
+	}
+	@include respond-to(handhelds) {
+		width: 50%;
+		margin: 0 0 0 25%;
+		height: 230px;
+	}
+	@include respond-to(oldschool) {
+		width: 100%;
+		margin: 0;
+	}
 }
 
 .wellcome.touch div a {
@@ -215,7 +304,7 @@ div.info-text span {
 	color: #34c9cb;
 	font-size: 1em;
 	outline: none;
-    font-weight: 400;
+	font-weight: 400;
 }
 
 .wellcome.touch div a.mail:hover {
@@ -223,25 +312,26 @@ div.info-text span {
 }
 
 .btn-pikanto {
-  border: 1px solid white;
-  outline: 0;
-  border-radius: 0;
-  background: none;
+	border: 1px solid white;
+	outline: 0;
+	border-radius: 0;
+	background: none;
 }
+
 .form-control {
-  border-radius: 0;
+	border-radius: 0;
 }
 
 .navbar-toggle {
-  display: none;
+	display: none;
 }
 
 input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
-  background-color: rgba(177, 30, 40, 0.8);
+	background-color: rgba(177, 30, 40, 0.8);
 }
 
 input.ng-valid.ng-touched,
 textarea.ng-valid.ng-touched {
-  background-color: #1299d0;
+	background-color: #1299d0;
 }

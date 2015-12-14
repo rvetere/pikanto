@@ -120,6 +120,14 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
             }
         });
 
+        $(window).scroll(function() {
+            if (document.body.scrollTop >= 866) {
+                $('.navbar-header').addClass('affix-top');
+            } else {
+                $('.navbar-header').removeClass('affix-top');
+            }
+        });
+
     }
 
     function _initImageFlipper() {

@@ -110,22 +110,18 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
                 }
             });
 
-        $('.pt-page-nav li a', $main).on('mouseover', function(ev) {
-            $('body').addClass('pt-hover');
-        });
-
-        $('.pt-page-nav-wrap', $main).on('mouseout', function(ev) {
-            if ($(ev.target).hasClass('pt-page-nav-wrap')) {
-                $('body').removeClass('pt-hover');
-            }
-        });
-
         $(window).scroll(function() {
             if (document.body.scrollTop >= 866) {
                 $('.navbar-header').addClass('affix-top');
             } else {
                 $('.navbar-header').removeClass('affix-top');
             }
+        });
+
+        $('#nav-toggle').click(function(e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+            $(document.body).toggleClass('pt-hover');
         });
 
     }

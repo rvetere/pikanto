@@ -16,6 +16,7 @@ ul.pt-page-nav {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 
   li {
     /*width: $nav-width;
@@ -28,6 +29,14 @@ ul.pt-page-nav {
     padding-bottom: 25px;
     text-align: center;
     display: inline-block;
+	font-family: 'Oswald', sans-serif;
+	
+	hr {
+		margin: 40px 10% 0 10%;
+		width: 80%;
+		text-align: center;
+		border-top: 1px solid rgba(255, 255, 255, 0.4);
+	}
 
     a {
       width: 100%;
@@ -68,24 +77,19 @@ ul.pt-page-nav {
       }*/
 
       span {
-        position: absolute;
         white-space: nowrap;
         transform: translateX(-100%);
-        padding: 3px 20px 0 0;
-        top: 0;
-        left: 0;
+        padding: 3px 0px 0 0;
         opacity: 0;
         transition: opacity 0.4s ease, color .4s ease;
         font-size: 2em;
         text-transform: uppercase;
         color: $nav-circle-color;
-		font-family: 'Oswald', sans-serif;
 		font-weight: 700;
 		font-size: 2.5em;
       }
 
     }
-
 
     &.pt-nav-active {
 
@@ -110,7 +114,9 @@ ul.pt-page-nav {
     &:hover {
 
       a {
-
+		
+		text-decoration: none;
+		
         &:after {
           background: $nav-circle-color-active !important;
         }
@@ -191,6 +197,18 @@ ul.pt-page-nav {
     }
   }
 
+}
+
+ul.pt-page-nav li.nav-social {
+	width: 30%;
+	float: left;	
+	text-align: center;
+}
+
+ul.pt-page-nav li.nav-impressum {
+	clear: both;
+	margin: 10px 0 0 0;
+	font-size: 0.8em;
 }
 
 .pt-page-nav-wrap {

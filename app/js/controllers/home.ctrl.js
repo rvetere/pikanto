@@ -38,13 +38,13 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
     // public functions
 
     function selectStripe(index) {
-        if (index > current) {
-            _nextPage( 19, index, true );
-            $('body').removeClass('pt-hover');
-        } else {
-            _nextPage( 26, index, true );
-            $('body').removeClass('pt-hover');
-        }
+        $('body').removeClass('pt-hover');
+        $('#nav-toggle').toggleClass('active');
+
+        var target = $('.' + index);
+        $('html,body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
     }
 
     // private functions
@@ -122,6 +122,10 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
             e.preventDefault();
             $(this).toggleClass('active');
             $(document.body).toggleClass('pt-hover');
+        });
+
+        $('.owl-carousel').owlCarousel({
+            items: 1
         });
 
     }

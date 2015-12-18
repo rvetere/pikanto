@@ -300,6 +300,17 @@ ul.pt-page-nav li.nav-social a {
 
 }
 
+.affix-top {
+  #nav-toggle {
+    &:before {
+      border-color: #34c9cb;
+    }
+  }
+
+  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+    background: #34c9cb;
+  }
+}
 
 // animate burger
 #nav-toggle {
@@ -321,7 +332,7 @@ ul.pt-page-nav li.nav-social a {
     left: -8px;
     width: 34px;
     height: 34px;
-    border: 2px solid #34c9cb;
+    border: 2px solid #fff;
     border-radius: 40px;
     transition: border-color .5s ease;
   }
@@ -332,7 +343,7 @@ ul.pt-page-nav li.nav-social a {
   border-radius: 2px;
   height: 2px;
   width: 18px;
-  background: #34c9cb;
+  background: #fff;
   position: absolute;
   display: block;
   content: '';

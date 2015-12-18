@@ -25,6 +25,7 @@ exports.config = {
 					'bower_components/jquery-mousewheel/jquery.mousewheel.js',
 					'bower_components/lodash/dist/lodash.js',
 					'bower_components/hammerjs/hammer.js',
+					'bower_components/owl.carousel/dist/owl.carousel.js',
 					'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
 
 					// angular
@@ -53,7 +54,9 @@ exports.config = {
 			joinTo: {
 				'css/app.css': [
 					/^app/,
-					'bower_components/animate-css/animate.css'
+					'bower_components/animate-css/animate.css',
+					'bower_components/owl.carousel/dist/assets/owl.carousel.css',
+					'bower_components/owl.carousel/dist/assets/owl.theme.default.css'
 				]
 			}
 		}

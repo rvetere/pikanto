@@ -79,26 +79,21 @@ html, body { height: 100%; }
   }
 
   a {
-	color: #34c9cb;
-    transition: color .3s ease;
     outline: none;
     font-weight: 400;
 	font-family: 'Oswald', sans-serif;
 	letter-spacing: 1px;
-	
 	background-color: #34c9cb;
     background-image: -webkit-linear-gradient(left, #4E5A5E 0%, #4E5A5E 50%, transparent 50%);
     background-position: 100% 0;
     background-size: 200% 200%;
     color: transparent;
-    transition: .3s .1s;
+    transition: .3s .1s ease-in-out;
     -webkit-background-clip: text;
 
     &:hover {
       text-decoration: none;
 	  background-position: 0 0;
-      color: transparent;
-      transition: .4s 0;
     }
   }
 

@@ -301,10 +301,8 @@ div.info-text span {
 }
 
 .wellcome.touch div a.mail {
-	color: #34c9cb;
 	font-size: 1em;
-	outline: none;
-	font-weight: 400;
+	color: #34c9cb;
 }
 
 .wellcome.touch div a.mail:hover {
@@ -313,6 +311,7 @@ div.info-text span {
 
 .pt-page.pt-page-contact a:hover {
 	color: #fff;	
+	background-position: 0 0;
 }
 
 .btn-pikanto {

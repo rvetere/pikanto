@@ -43,73 +43,13 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
         var target = $('.' + index);
         $('html,body').animate({
-            scrollTop: target.offset().top
+            scrollTop: target.offset().top - 100
         }, 1000);
     }
 
     // private functions
 
     function _init() {
-        $pages = $main.children( 'div.pt-page' );
-        if ($pages.length < 7) {
-            console.log('not all pages available..');
-            return setTimeout(function() {
-                _init();
-            }, 50);
-        }
-        $navs = $('.pt-page-nav li', $main);
-        pagesCount = $pages.length;
-        $pages.each( function() {
-            var $page = $( this );
-            $page.data( 'originalClassList', $page.attr( 'class' ) );
-        } );
-
-        $pages.eq( current ).addClass( 'pt-page-current' );
-        $navs.eq( current ).addClass( 'pt-nav-active' );
-
-        var hammerEl = $('#pt-main')[0],
-            mc = new Hammer.Manager(hammerEl, {});
-
-        mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }) );
-        //mc.add( new Hammer.Tap({ event: 'quadrupletap', taps: 4 }) );
-
-        mc.on('pan', _handlePan);
-        //mc.on('quadrupletap', handleTaps);
-
-        $('body')
-            .on('mousewheel', function(ev) {
-                if (isAnimating || isWheeling) {
-                    return;
-                }
-
-                isWheeling = true;
-                if (ev.deltaY > 0) {
-                    _nextPage( 26, -1 );
-                } else {
-                    _nextPage( 19, 1 );
-                }
-
-                clearTimeout(isWheelingTimer2);
-                isWheelingTimer2 = setTimeout(function() {
-                    isWheeling = false;
-                }, 3200);
-            })
-            .on('keyup', function(ev) {
-                switch (ev.keyCode) {
-
-                    case 38: // up
-                        _nextPage( 26, -1 );
-                        break;
-                    case 40: // down
-                        _nextPage( 19, 1 );
-                        break;
-
-                    default:
-                        //console.log(ev.keyCode);
-                        break;
-                }
-            });
-
         if (viewportW > 1025) {
             $(window).scroll(function() {
                 var scrollTop = document.body.scrollTop || $(window).scrollTop();

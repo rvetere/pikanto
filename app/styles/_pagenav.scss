@@ -213,7 +213,6 @@ ul.pt-page-nav li a {
 
 ul.pt-page-nav li a:hover {
   background-position: 0 0;
-  background-image: none;
 }
 
 @-moz-document url-prefix() {
@@ -222,6 +221,7 @@ ul.pt-page-nav li a:hover {
     color: #fff;
     &:hover {
       color: #34c9cb;
+      background-image: none;
     }
   }
 }

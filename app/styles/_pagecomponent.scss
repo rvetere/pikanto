@@ -195,7 +195,7 @@ a {
 		padding: 0;
         height: 320px;
 
-        @include respond-to(handhelds) { height: 230px; }
+        @include respond-to(handhelds) { height: 208px; }
         @include respond-to(oldschool) { height: 178px; }
 
        video {

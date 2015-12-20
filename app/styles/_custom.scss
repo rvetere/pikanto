@@ -289,10 +289,12 @@ div.info-text span {
 		width: 50%;
 		margin: 0 0 0 25%;
 		height: 230px;
+	  	float: none;
 	}
 	@include respond-to(oldschool) {
 		width: 100%;
 		margin: 0;
+	  float: none;
 	}
 }
 

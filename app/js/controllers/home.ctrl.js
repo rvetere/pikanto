@@ -76,11 +76,11 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
             responsive:{
                 0:{
                     items:1,
-                    nav:false
+                    nav:true
                 },
                 500:{
                     items:1,
-                    nav:false
+                    nav:true
                 },
                 1025:{
                     items:1,

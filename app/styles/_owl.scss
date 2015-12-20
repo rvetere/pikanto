@@ -68,7 +68,7 @@
     height: 396px;
   }
   @include respond-to(handhelds) {
-    height: 230px;
+    height: 203px;
   }
   @include respond-to(oldschool) {
     height: 165px;

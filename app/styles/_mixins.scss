@@ -1,6 +1,6 @@
 $break-mini: 320px; // iphone 4
 $break-small: 414px; // iphone 6plus
-$break-large: 1280px;
+$break-large: 1025px;
 
 @mixin respond-to($media) {
   @if $media == oldschool {

@@ -48,6 +48,13 @@ html, body { height: 100%; }
 	//display: inline-block;
 }
 
+a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
 
 /* Text Styles, Colors, Backgrounds */
 .pt-page {
@@ -91,9 +98,11 @@ html, body { height: 100%; }
     transition: .3s .1s ease-in-out;
     -webkit-background-clip: text;
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: none;
 	  background-position: 0 0;
+      outline: none;
     }
   }
 
@@ -151,12 +160,12 @@ html, body { height: 100%; }
 
   .container {
     position: relative;
-	margin: 0 auto 180px auto;
-	padding: 0 15px;
+	margin: 0 auto;
+	padding: 0 15px 180px 15px;
 	
-	@include respond-to(medium-screens) { padding: 0 50px; margin: 0 auto 180px auto; }
-	@include respond-to(handhelds) { padding: 0 30px; margin: 0 auto 60px auto; }
-    @include respond-to(oldschool) { padding: 0 30px; margin: 0 auto 40px auto; }
+	@include respond-to(medium-screens) { padding: 0 50px 180px 50px; margin: 0 auto; }
+	@include respond-to(handhelds) { padding: 0 30px 60px 30px; margin: 0 auto; }
+    @include respond-to(oldschool) { padding: 0 30px 40px 30px; margin: 0 auto; }
   }
   
   .container.small-space {
@@ -183,8 +192,11 @@ html, body { height: 100%; }
    .video-holder {
 		overflow: hidden;
 		width: 100%;
-		height: 360px;
 		padding: 0;
+        height: 320px;
+
+        @include respond-to(handhelds) { height: 230px; }
+        @include respond-to(oldschool) { height: 178px; }
 
        video {
            width: 100%;
@@ -211,6 +223,7 @@ html, body { height: 100%; }
   .image-video-fallback {
     max-width: 100%;
 	margin: 0 auto 0 auto;
+    position: relative;
   }
 
   .image-video-fallback {
@@ -288,6 +301,17 @@ html, body { height: 100%; }
 
 }
 
+@-moz-document url-prefix() {
+  .pt-page {
+    a {
+      background-color: transparent;
+      &:hover {
+        color: #34c9cb;
+      }
+    }
+  }
+}
+
 .pt-page-bayer,.pt-page-melanie, .pt-page-about, .pt-page-illustration, .pt-page-wildstar, .pt-page-contact {
   /*@include gradient-horizontal-ff(#1a1a1a, #2a2a2a, 0%, 100%);*/
   box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.3);
@@ -326,6 +350,46 @@ html, body { height: 100%; }
 .pt-page-contact {
   @include gradient-horizontal-ff(#7297ff, #3fcff6, 0%, 100%);
 }*/
+
+
+.video-play-btn {
+  transition: all .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  font-size: 5em;
+  background: rgba(0,0,0,.4);
+  text-align: center;
+  line-height: 123px;
+  border-radius: 50px;
+  letter-spacing: -12px;
+  cursor: pointer;
+  color:#fff;
+
+  @include respond-to(medium-screens) { }
+  @include respond-to(handhelds) { font-size: 7em; }
+  @include respond-to(oldschool) { }
+
+  &.playing {
+    left: initial;
+    right: 10px;
+    bottom: 10px;
+    top: initial;
+    letter-spacing: -1px;
+    font-size: 2.4em;
+    width: 50px;
+    height: 50px;
+    line-height: 59px;
+
+    @include respond-to(medium-screens) { }
+    @include respond-to(handhelds) { font-size: 3.4em; }
+    @include respond-to(oldschool) { }
+  }
+}
 
 .col-md-3 {
 	padding: 0px;

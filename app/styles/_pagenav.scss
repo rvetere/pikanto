@@ -197,23 +197,34 @@ ul.pt-page-nav {
 }
 
 
+ul.pt-page-nav li a {
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(left, #34c9cb 0%, #34c9cb 50%, transparent 50%);
+  background-position: 100% 0;
+  background-size: 200% 200%;
+  color: transparent;
+  transition: .5s .1s ease-in-out;
+  -webkit-background-clip: text;
+  font-weight: 700;
+  font-size: 4em;
+  letter-spacing: 3px;
+  line-height: 1.3em;
+}
+
+ul.pt-page-nav li a:hover {
+  background-position: 0 0;
+  background-image: none;
+}
+
+@-moz-document url-prefix() {
   ul.pt-page-nav li a {
-    background-color: #ffffff;
-    background-image: -webkit-linear-gradient(left, #34c9cb 0%, #34c9cb 50%, transparent 50%);
-    background-position: 100% 0;
-    background-size: 200% 200%;
-    color: transparent;
-    transition: .5s .1s ease-in-out;
-    -webkit-background-clip: text;
-	font-weight: 700;
-	font-size: 4em;
-    letter-spacing: 3px;
-    line-height: 1.3em;
+    background-color: transparent;
+    color: #fff;
+    &:hover {
+      color: #34c9cb;
+    }
   }
-  
-  ul.pt-page-nav li a:hover {
-    background-position: 0 0;
-  }
+}
 
 ul.pt-page-nav li.nav-social {
 	margin: 0;
@@ -313,27 +324,12 @@ ul.pt-page-nav li.nav-social a {
 // animate burger
 #nav-toggle {
   cursor: pointer;
-  padding: 0;
   position: relative;
   z-index: 3000;
   height: 20px;
   width: 20px;
-  display: inline-block;
-  margin-left: 19px;
-  top: 2px;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -16px;
-    left: -8px;
-    width: 34px;
-    height: 34px;
-    border: 2px solid #fff;
-    border-radius: 40px;
-    transition: border-color .5s ease;
-  }
+  float: left;
+  margin: 50px 0 0 30px;
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
@@ -358,11 +354,11 @@ ul.pt-page-nav li.nav-social a {
 }
 
 #nav-toggle span:before {
-  top: -4px;
+  top: -6px;
 }
 
 #nav-toggle span:after {
-  bottom: -4px;
+  bottom: -6px;
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {

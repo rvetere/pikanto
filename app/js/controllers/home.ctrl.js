@@ -110,13 +110,18 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
                 }
             });
 
-        $(window).scroll(function() {
-            if (document.body.scrollTop >= 866) {
-                $('.navbar-header').addClass('affix-top');
-            } else {
-                $('.navbar-header').removeClass('affix-top');
-            }
-        });
+        if (viewportW > 1025) {
+            $(window).scroll(function() {
+                var scrollTop = document.body.scrollTop || $(window).scrollTop();
+                if (scrollTop >= 866) {
+                    $('.navbar-header').addClass('affix-top');
+                } else {
+                    $('.navbar-header').removeClass('affix-top');
+                }
+            });
+        } else {
+            $('.navbar-header').addClass('affix-top');
+        }
 
         $('#nav-toggle').click(function(e) {
             e.preventDefault();
@@ -125,7 +130,44 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         });
 
         $('.owl-carousel').owlCarousel({
-            items: 1
+            loop:true,
+            responsiveClass:true,
+            navText: ['<i class="icn-ios-arrow-left"></i>', '<i class="icn-ios-arrow-right"></i>'],
+            responsive:{
+                0:{
+                    items:1,
+                    nav:false
+                },
+                500:{
+                    items:1,
+                    nav:false
+                },
+                1025:{
+                    items:1,
+                    nav:true,
+                    loop:false
+                }
+            }
+        });
+
+        $('.video-play-btn').on('click', function(e) {
+            e.preventDefault();
+            var $video = $(this).prev();
+            if ($(this).find('.icn-play').length) {
+                if ($video.length) {
+                    $video[0].play();
+                    $(this)
+                        .addClass('playing')
+                        .find('i')[0].className = 'icn-playback-pause';
+                }
+            } else {
+                if ($video.length) {
+                    $video[0].pause();
+                    $(this)
+                        .removeClass('playing')
+                        .find('i')[0].className = 'icn-play';
+                }
+            }
         });
 
     }

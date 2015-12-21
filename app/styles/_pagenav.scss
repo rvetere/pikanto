@@ -248,8 +248,8 @@ ul.pt-page-nav li.nav-social a {
 	text-decoration: none;
 	color: rgba(255, 255, 255, .4);
 	
-	@include respond-to(handhelds) { font-size: 2em; }
-    @include respond-to(oldschool) { font-size: 2em; }
+	@include respond-to(handhelds) { font-size: 1.2em; }
+    @include respond-to(oldschool) { font-size: 1.2em; }
 }
 
 .pt-page-nav-wrap div.nav-impressum a:hover {
@@ -329,7 +329,17 @@ ul.pt-page-nav li.nav-social a {
   height: 20px;
   width: 20px;
   float: left;
-  margin: 50px 0 0 30px;
+  margin: 45px 0 0 30px;
+  
+  @include respond-to(medium-screens) {
+		margin: 45px 0 0 30px;
+	}
+	@include respond-to(handhelds) {
+		margin: 40px 0 0 30px;
+	}
+	@include respond-to(oldschool) {
+		margin: 40px 0 0 30px;
+	}
 }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {

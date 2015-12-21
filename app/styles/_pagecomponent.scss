@@ -395,18 +395,38 @@ a {
 }
 
 .site-notice {
-  opacity: 1;
-  position: fixed;
-  bottom: 30px;
-  left: 320px;
-  font-size: 1.2em;
-  font-weight: 500;
-  color: rgba(255, 255, 255, .7);
-  transition: opacity .5s ease;
+    opacity: 1;
+    position: fixed;
+    bottom: 30px;
+    left: 240px;
+    font-size: 1em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    transition: opacity .5s ease;
+	font-family: 'Oswald', sans-serif;
+	color: #34c9cb;
+	
+	@include respond-to(medium-screens) {
+		left: 240px;
+	}
+	@include respond-to(handhelds) {
+		left: 190px;
+	}
+	@include respond-to(oldschool) {
+		left: 100px;
+	}
 
   &.in-hide {
     opacity: 0;
   }
+}
+
+.site-notice p {
+    margin: 0 0 1px 0;
+}
+
+.site-notice span {
+    padding: 0 18px;
 }
 
 .col-md-3 {

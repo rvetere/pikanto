@@ -15,9 +15,20 @@
             <li class="nav-social"><a href="https://ch.linkedin.com/in/sybille-hausherr-00307a81" target="_blank" alt="linkedin">linkedin</a></li>
             <li class="nav-social"><a href="https://www.facebook.com/pikanto.ch/" target="_blank" alt="facebook">facebook</a></li>
             <li class="nav-social"><a href="https://twitter.com/PikantoHausherr" target="_blank" alt="twitter">twitter</a></li>
-            <!--<li><a href="#" oc-modal-open="{url: 'partials/modal.html', controller: 'ModalCtrl as ModalCtrl', cls: 'super-scaled'}" alt=""><span>Modal</span></a>-->
         </ul>
-        <div class="nav-impressum"><a href="#" target="_blank" alt="impressum">impressum</a></div>
+        <!--<div class="nav-impressum"><a href="#" oc-modal-open="{url: 'partials/modal.html', controller: 'ModalCtrl as ModalCtrl', cls: 'super-scaled'}" alt="impressum">impressum</a></div>-->
+        <div class="nav-impressum"><a href="#" data-ng-click="home.showSiteNotice()" alt="impressum">impressum</a></div>
+
+        <div class="site-notice in-hide">
+            <p>
+                Sybille Hausherr<br>
+                Schmittestrasse 20<br>
+                8308 Illnau<br>
+                <br>
+                Tel: 052 535 86 70<br>
+                E-Mail: hello@pikanto.ch<br>
+            </p>
+        </div>
     </div>
 
     <div class="pt-page pt-page-home" ng-include="'/partials/stripes/stripe-home.html'"></div>

@@ -4,6 +4,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
 
     // bind public functions
     vm.selectStripe = selectStripe;
+    vm.showSiteNotice = showSiteNotice;
 
     // private variables
     var $main = $( '#pt-main' ), $pages, $navs, pagesCount,
@@ -45,6 +46,10 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         $('html,body').animate({
             scrollTop: target.offset().top - 100
         }, 1000);
+    }
+
+    function showSiteNotice() {
+        $('.site-notice').toggleClass('in-hide');
     }
 
     // private functions

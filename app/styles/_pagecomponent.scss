@@ -394,6 +394,21 @@ a {
   }
 }
 
+.site-notice {
+  opacity: 1;
+  position: fixed;
+  bottom: 30px;
+  left: 320px;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .7);
+  transition: opacity .5s ease;
+
+  &.in-hide {
+    opacity: 0;
+  }
+}
+
 .col-md-3 {
 	padding: 0px;
 	margin: 0px;

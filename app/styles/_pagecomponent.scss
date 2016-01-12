@@ -1,48 +1,5 @@
 html, body { height: 100%; }
 
-//.pt-perspective {
-//  position: relative;
-//  width: 100%;
-//  height: 100%;
-//  -webkit-perspective: 1200px;
-//  -moz-perspective: 1200px;
-//  perspective: 1200px;
-//}
-//
-//.pt-page {
-//  width: 100%;
-//  height: 100%;
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  visibility: hidden;
-//  overflow: hidden;
-//  -webkit-backface-visibility: hidden;
-//  -moz-backface-visibility: hidden;
-//  backface-visibility: hidden;
-//  -webkit-transform: translate3d(0, 0, 0);
-//  -moz-transform: translate3d(0, 0, 0);
-//  transform: translate3d(0, 0, 0);
-//  -webkit-transform-style: preserve-3d;
-//  -moz-transform-style: preserve-3d;
-//  transform-style: preserve-3d;
-//}
-//
-//.pt-page-current,
-//.no-js .pt-page {
-//  visibility: visible;
-//  z-index: 1;
-//}
-//
-//.no-js body {
-//  overflow: auto;
-//}
-//
-//.pt-page-ontop {
-//  z-index: 999;
-//}
-
-
 .pt-page {
   width: 100%;
 	//display: inline-block;
@@ -60,7 +17,7 @@ a {
 .pt-page {
 
   h1 {
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Khand', sans-serif;
     font-weight: 300;
     font-size: 2.5em;
     line-height: 1.5;
@@ -115,48 +72,6 @@ a {
 	@include respond-to(handhelds) { width: 100%; }
     @include respond-to(oldschool) { width: 100%; }
   }
-  
-  .float-right {
-	float: right;
-	text-align: right;
-    @include respond-to(medium-screens) { float: none; text-align: left; }
-	@include respond-to(handhelds) { float: none; text-align: left; }
-    @include respond-to(oldschool) { float: none; text-align: left; }
-  }
-
-    .image-flipper .stripe-img {
-      width: 100%;
-  }
-  .stripe-img {
-    width: 50%;
-	float: left;
-    @include respond-to(medium-screens) { width: 100%; margin: 0; }
-	@include respond-to(handhelds) { width: 100%; margin: 0; }
-    @include respond-to(oldschool) { width: 100%; margin: 0; }
-  }
-  
-  .stripe-img.float-right {
-	float: right;
-    @include respond-to(medium-screens) { width: 100%; float: none; }
-	@include respond-to(handhelds) { width: 100%; float: none; }
-    @include respond-to(oldschool) { width: 100%; float: none; }
-  }
-
- /* &.pt-page-kitten {
-    .stripe-img {
-      @include respond-to(medium-screens) { width: 60%; margin-left: 20%; }
-      @include respond-to(handhelds) { width: 60%; margin-left: 20%; }
-      @include respond-to(oldschool) { width: 60%; margin-left: 20%; }
-    }
-  }
-
-  &.pt-page-about {
-    .stripe-img {
-      @include respond-to(medium-screens) { width: 50%; margin-left: 35%; margin-top: -16%; }
-      @include respond-to(handhelds) { width: 50%; margin-left: 45%; margin-top: 0; }
-      @include respond-to(oldschool) { width: 50%; margin-left: 45%; margin-top: 0; }
-    }
-  }*/
 
   .container {
     position: relative;
@@ -189,62 +104,6 @@ a {
     	font-size: 1em;
 	}
 
-   .video-holder {
-		overflow: hidden;
-		width: 100%;
-		padding: 0;
-        height: 320px;
-
-        @include respond-to(handhelds) { height: 208px; }
-        @include respond-to(oldschool) { height: 178px; }
-
-       video {
-           width: 100%;
-       }
-	}
-
-  .bg-video,
-  .bg-video-fallback {
-    width: 100%;
-    background-color: #fff;
-  }
-
-  .bg-video-fallback {
-    @include respond-to(wide-screens) { display: none; }
-  }
-
-  .bg-video {
-    @include respond-to(medium-screens) { display: none; }
-    @include respond-to(handhelds) { display: none; }
-    @include respond-to(oldschool) { display: none; }
-  }
-
-  .image-video,
-  .image-video-fallback {
-    max-width: 100%;
-	margin: 0 auto 0 auto;
-    position: relative;
-  }
-
-  .image-video-fallback {
-    @include respond-to(wide-screens) { display: none; }
-  }
-
-  .image-video {
-    @include respond-to(medium-screens) { display: none; }
-    @include respond-to(handhelds) { display: none; }
-    @include respond-to(oldschool) { display: none; }
-  }
-
-  /*.stripe-content {
-    transform: translateY(50%);
-    margin-top: 8%;
-
-    @include respond-to(medium-screens) { transform: translateY(0%); }
-    @include respond-to(handhelds) { transform: translateY(0%); }
-    @include respond-to(oldschool) { transform: translateY(0%); }
-  }*/
-
   .wide-screen {
     @include respond-to(medium-screens) { display: none; }
     @include respond-to(handhelds) { display: none; }
@@ -253,40 +112,6 @@ a {
 
   .mobile {
     @include respond-to(wide-screens) { display: none; }
-  }
-
-  .hover-img {
-    width: 100%;
-    background-size: 100% !important;
-    overflow: hidden;
-    position: relative;
-    transition: transform .4s ease;
-
-    img {
-      transition: opacity 1s ease;
-
-      &:hover {
-        opacity: 0;
-      }
-    }
-
-    &.changed {
-
-      &.secondary {
-        transform: translateX(0);
-        //animation-name: rubberBand;
-        //animation-duration: 1s;
-        //animation-fill-mode: both;
-      }
-
-    }
-
-    &.secondary {
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translateX(-100%);
-    }
   }
 
   .contact-form {
@@ -335,98 +160,6 @@ a {
   background-color: #0b7399;
   color: #fff;
   display: inline-block;
-}
-
-/*.pt-page-wildstar {
-  background: url('/images/stripes/wildstar_bg.jpg');
-  background-size: cover;
-}
-
-.pt-page-soundcloud {
-  @include gradient-horizontal-ff(#694e39, #7f6c5e, 0%, 100%);
-}
-
-.pt-page-about {
-  @include gradient-horizontal-ff(#60305a, #795772, 0%, 100%);
-}
-
-.pt-page-contact {
-  @include gradient-horizontal-ff(#7297ff, #3fcff6, 0%, 100%);
-}*/
-
-
-.video-play-btn {
-  transition: all .5s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin-left: -50px;
-  margin-top: -50px;
-  font-size: 5em;
-  background: rgba(0,0,0,.4);
-  text-align: center;
-  line-height: 123px;
-  border-radius: 50px;
-  letter-spacing: -12px;
-  cursor: pointer;
-  color:#fff;
-
-  @include respond-to(medium-screens) { }
-  @include respond-to(handhelds) { font-size: 7em; }
-  @include respond-to(oldschool) { }
-
-  &.playing {
-    left: initial;
-    right: 10px;
-    bottom: 10px;
-    top: initial;
-    letter-spacing: -1px;
-    font-size: 2.4em;
-    width: 50px;
-    height: 50px;
-    line-height: 59px;
-
-    @include respond-to(medium-screens) { }
-    @include respond-to(handhelds) { font-size: 3.4em; }
-    @include respond-to(oldschool) { }
-  }
-}
-
-.site-notice {
-    opacity: 1;
-    position: fixed;
-    bottom: 30px;
-    left: 240px;
-    font-size: 1em;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
-    transition: opacity .5s ease;
-	font-family: 'Oswald', sans-serif;
-	color: #34c9cb;
-	
-	@include respond-to(medium-screens) {
-		left: 240px;
-	}
-	@include respond-to(handhelds) {
-		left: 190px;
-	}
-	@include respond-to(oldschool) {
-		left: 100px;
-	}
-
-  &.in-hide {
-    opacity: 0;
-  }
-}
-
-.site-notice p {
-    margin: 0 0 1px 0;
-}
-
-.site-notice span {
-    padding: 0 18px;
 }
 
 .col-md-3 {

@@ -1,42 +1,21 @@
 <div id="pt-main" class="pt-perspective">
     <div class="pt-page-nav-wrap">
-        <ul class="pt-page-nav state-home">
-            <li class="divider"><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt="">home</a></li>
-            <!--<li><a href="#" data-ng-click="home.selectStripe(1)" alt=""><span>bayer diabetes care</span></a></li>
-            <li><a href="#" data-ng-click="home.selectStripe(2)" alt=""><span>melanie o.</span></a></li>
-            <li><a href="#" data-ng-click="home.selectStripe(3)" alt=""><span>research soundcloud</span></a></li>
-            <li><a href="#" data-ng-click="home.selectStripe(4)" alt=""><span>illustration</span></a></li>
-            <li><a href="#" data-ng-click="home.selectStripe(5)" alt=""><span>wildstar signaturen</span></a></li>
-            <li class="divider"><a href="#" data-ng-click="home.selectStripe(6)" alt=""><span>kitten got claws</span></a></li>-->
-            <li><a href="#" data-ng-click="home.selectStripe('pt-page-bayer')" alt="">work</a></li>
-            <li><a href="#" data-ng-click="home.selectStripe('pt-page-about')" alt="">about</a></li>
-            <li><a href="#" data-ng-click="home.selectStripe('pt-page-contact')" alt="">contact</a></li>
-            <li><hr></li>
-            <li class="nav-social"><a href="https://ch.linkedin.com/in/sybille-hausherr-00307a81" target="_blank" alt="linkedin">linkedin</a></li>
-            <li class="nav-social"><a href="https://www.facebook.com/pikanto.ch/" target="_blank" alt="facebook">facebook</a></li>
-            <li class="nav-social"><a href="https://twitter.com/PikantoHausherr" target="_blank" alt="twitter">twitter</a></li>
+        <ul class="pt-page-nav">
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt="">Home</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-mittagsmenu')" alt="">Mittagsmenu</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-alacarte')" alt="">a la Carte</a></li>
+            <li>LOGO</li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-ueberuns')" alt="">Über uns</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-galerie')" alt="">Galerie</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-kontakt')" alt="">Kontakt</a></li>
+            
         </ul>
-        <!--<div class="nav-impressum"><a href="#" oc-modal-open="{url: 'partials/modal.html', controller: 'ModalCtrl as ModalCtrl', cls: 'super-scaled'}" alt="impressum">impressum</a></div>-->
-        <div class="nav-impressum"><a href="#" data-ng-click="home.showSiteNotice()" alt="impressum">impressum</a></div>
-
-        <div class="site-notice in-hide">
-            <p>
-                Sybille Hausherr, Schmittestrasse 20, 8308 Illnau<span>-</span>052 535 86 70<span>-</span><a href="mailto:hello@pikanto.ch">hello@pikanto.ch</a><br>
-            </p>
-        </div>
     </div>
 
     <div class="pt-page pt-page-home" ng-include="'/partials/stripes/stripe-home.html'"></div>
-    <div class="pt-page pt-page-bayer" ng-include="'/partials/stripes/stripe-bayer.html'"></div>
-    <div class="pt-page pt-page-melanie" ng-include="'/partials/stripes/stripe-melanie.html'"></div>
-    <div class="pt-page pt-page-soundcloud" ng-include="'/partials/stripes/stripe-soundcloud.html'"></div>
-    <div class="pt-page pt-page-illustration" ng-include="'/partials/stripes/stripe-illustration.html'"></div>
-    <div class="pt-page pt-page-wildstar" ng-include="'/partials/stripes/stripe-wildstar.html'"></div>
-    <div class="pt-page pt-page-kitten" ng-include="'/partials/stripes/stripe-kitten.html'"></div>
-    <div class="pt-page pt-page-about" ng-include="'/partials/stripes/stripe-about.html'"></div>
-    <div class="pt-page pt-page-contact" ng-include="'/partials/stripes/stripe-contact.html'"></div>
+    <div class="pt-page pt-page-mittagsmenu" ng-include="'/partials/stripes/stripe-mittagsmenu.html'"></div>
+    <div class="pt-page pt-page-alacarte" ng-include="'/partials/stripes/stripe-alacarte.html'"></div>
+    <div class="pt-page pt-page-ueberuns" ng-include="'/partials/stripes/stripe-ueberuns.html'"></div>
+    <div class="pt-page pt-page-galerie" ng-include="'/partials/stripes/stripe-galerie.html'"></div>
+    <div class="pt-page pt-page-kontakt" ng-include="'/partials/stripes/stripe-kontakt.html'"></div>
 </div>
-
-<!--<div class="pt-message">
-    <p>Your browser does not support CSS animations.</p>
-</div>-->

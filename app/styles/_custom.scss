@@ -34,6 +34,7 @@ body {
 	color: #201e1e;
 	background-color: #f9f8f3;
 	font-weight: 300;
+	font-size: 14px;
 
 	/*@include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);*/
 }
@@ -54,97 +55,6 @@ a:hover {
 
 .wrapper, .main-content, .view {
 	height: 100%;
-}
-
-.navbar-header {
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	height: 100px;
-	transition: background-color 0.8s ease;
-	
-	@include respond-to(medium-screens) {
-		height: 100px;
-	}
-	@include respond-to(handhelds) {
-		height: 80px;
-	}
-	@include respond-to(oldschool) {
-		height: 80px;
-	}
-
-	.info-text {
-		opacity: 0;
-		transition: opacity .8s ease;
-	}
-
-	.navbar-brand {
-
-		svg {
-			display: block;
-			width: 200px;
-			height: 58px;
-			transition: all .8s ease;
-
-			.st0{ fill: #fff; }
-		}
-		span {
-			color: #fff;
-			font-family: 'Raleway', sans-serif;
-			font-weight: 100;
-			font-size: .7em;
-			font-style: italic;
-			position: relative;
-			top: -18px;
-			left: 14px;
-		}
-		padding: 0;
-		margin: 29px 0 0 32px;
-		width: 200px;
-		height: 58px;
-		text-indent: -10000px;
-	}
-
-	&.affix-top {
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: #fff;
-
-		.info-text {
-			opacity: 1;
-		}
-
-		.navbar-brand {
-			svg {
-				display: block;
-				width: 150px;
-				height: 43.5px;
-
-				.st0{ fill: #34c9cb; }
-				
-				@include respond-to(medium-screens) {
-					width: 150px;
-					height: 43.5px;
-				}
-				@include respond-to(handhelds) {
-					width: 100px;
-					height: 29px;
-				}
-				@include respond-to(oldschool) {
-					width: 100px;
-					height: 29px;
-				}
-			}
-			span {
-				color: #34c9cb;
-				font-size: .6em;
-				left: 10px;
-			}
-			background-size: 150px 43.5px;
-			background-position: 150px 30px;
-		}
-	}
 }
 
 .pt-nav {
@@ -209,164 +119,102 @@ div.info-text span {
 	}
 }
 
-.pt-nav a:hover {
-	color: #4E5A5E;
-}
-
-.wellcome {
-	padding-top: 120px !important;
-}
-
-.wellcome div {
-	width: 25%;
-	float: left;
-	text-align: center;
-	margin: 60px 0 0 0;
-	
-	@include respond-to(medium-screens) {
-		width: 50%;
-		height: 260px;
-	}
-	@include respond-to(handhelds) {
-		width: 50%;
-		height: 180px;
-	}
-	@include respond-to(oldschool) {
-		width: 100%;
-		float: none;
-		margin: 20px 0 0 0;
-	}
-}
-
-.wellcome span {
-	width: 100% !important;
-	margin: 0 0 40px 0 !important;
-	padding: 0px;
-	line-height: 0.5;
-	letter-spacing: 3px;
-	font-family: 'Oswald', sans-serif;
-	font-weight: 300;
-	font-size: 1em;
-}
-
-.wellcome div h2 {
-	font-family: 'Oswald', sans-serif;
-	font-weight: 300;
-	font-size: 1.5em;
-	line-height: 2;
-	border-bottom: 1px solid #34c9cb;
-	width: 70%;
-	margin: 0 0 15px 15%;
-	
-	@include respond-to(handhelds) {
-		width: 80%;
-		margin: 0 0 15px 10%;
-	}
-}
-
-.wellcome div p {
-	width: 70%;
-	margin: 0 0 15px 15%;
-	font-family: 'Raleway', Calibri, Arial, sans-serif;
-}
-
-.wellcome div a {
-	color: #4E5A5E;
-	font-size: 5em;
-	display: block;
-}
-
-.wellcome div a:hover {
-	
-}
-
-.wellcome.touch {
+.stripe-image {
+	background-repeat: no-repeat;
+	background-clip: border-box;
 	width: 100%;
-	text-align: center;
-	display: inline-block;
-	background-color: #0f5670;
-	padding: 0px !important;
-	
-	@include respond-to(medium-screens) {
-		height: 320px;
-	}
+	height: 200px;
+	margin: 0 auto;
 }
 
-.wellcome.touch div {
-	width: 25%;
+.googledocs {
+	
+}
+
+.googledocs h1, .ueberuns h1 {
+	font-size: 24px;
+	font-family: 'Khand', sans-serif;
+	margin: 0 auto;
+	padding: 60px 0 0 0;
+	font-weight: 400;
+	line-height: 1.2em;
+	text-align: center;
+}
+
+.googledocs h2, .ueberuns h2 {
+	font-size: 16px;
+	font-family: 'Khand', sans-serif;
+	margin: 0 auto;
+	padding: 60px 0 0 0;
+	font-weight: 400;
+	line-height: 1.2em;
+	text-align: left;
+}
+
+.googledocs p.titel {
+	margin: 0 auto 2em auto;
+    text-align: center;
+}
+
+.googledocs p.titel span {
+	font-size: 12px;
+}
+
+.googledocs .lunch-menu{
+	width: 48%;
+	padding: 0 0 0 2%;
 	float: left;
-	text-align: center;
-	margin: 0 0 0 37.5%;
-	padding: 30px 0;
-	color: #fff;
-	
-	@include respond-to(medium-screens) {
-		width: 50%;
-		margin: 0 0 0 25%;
-	}
-	@include respond-to(handhelds) {
-		width: 50%;
-		margin: 0 0 0 25%;
-		height: 230px;
-	  	float: none;
-	}
-	@include respond-to(oldschool) {
-		width: 100%;
-		margin: 0;
-	  float: none;
-	}
 }
 
-.wellcome.touch div a {
-	color: #fff;
+.googledocs .lunch-menu.table-one{
+	padding: 0 2% 0 0;
+	border-right: 1px solid #201e1e;
 }
 
-.wellcome.touch div a.mail {
-	font-size: 1em;
-	color: #34c9cb;
-}
-
-.wellcome.touch div a.mail:hover {
-	color: #fff;
-}
-
-.pt-page.pt-page-contact a:hover {
-	color: #fff;	
-	background-position: 0 0;
-}
-
-.btn-pikanto {
-	border: 1px solid white;
-	outline: 0;
-	border-radius: 0;
-	background: none;
-}
-
-.form-control {
-	border-radius: 0;
-}
-
-.navbar-toggle {
-	display: none;
-}
-
-input.ng-invalid.ng-touched,
-textarea.ng-invalid.ng-touched {
-	background-color: rgba(177, 30, 40, 0.8);
-}
-
-input.ng-valid.ng-touched,
-textarea.ng-valid.ng-touched {
-	background-color: #1299d0;
-}
-
-.googledocs iframe {
+.googledocs table{
 	width: 100%;
-    height: 710px;
-    display: inline;
-    border: 0px;
+	float: left;
+	font-size: 16px;
+	text-align: left;
+	padding: 0 0 0 2%;
 }
 
-.c2, .c16, .c9, .c14, .c6 {
-	border: 0px;
+.googledocs table td{
+	padding: 0 0 14px 0;
+	vertical-align: bottom;
+	text-align: right;
+}
+
+.googledocs table td:first-child{
+	width: 85%;
+	text-align: left;
+}
+
+.googledocs.contact table td{
+	width: 50%;
+	text-align: left;
+	padding: 0 0 0 0;
+}
+
+.googledocs table p{
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+
+.googledocs table p:first-child{
+	font-weight: 600;
+}
+
+.ueberuns {
+	background-image: url(../../images/heisser_stein.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 300px;
+	color: #f9f8f3;
+}
+
+.pt-page-kontakt {
+	background-color: #201e1e;
+	color: #f9f8f3;
 }

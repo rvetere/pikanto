@@ -16,67 +16,10 @@ a {
 /* Text Styles, Colors, Backgrounds */
 .pt-page {
 
-  h1 {
-	font-family: 'Khand', sans-serif;
-    font-weight: 300;
-    font-size: 2.5em;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-	border-bottom: 1px solid #34c9cb;
-	width: 100%;
-
-    @include respond-to(medium-screens) { font-size: 2.3em; }
-    @include respond-to(handhelds) { font-size: 3em; }
-    @include respond-to(oldschool) { font-size: 2em; margin: 0 0 10px 0; }
-
-    span {
-      font-family: serif;
-      font-weight: 400;
-      font-size: 40%;
-      display: block;
-      opacity: 0.4;
-    }
-
-    strong {
-      color: rgba(0,0,0,0.1);
-    }
-  }
-
-  a {
-    outline: none;
-    font-weight: 400;
-	font-family: 'Oswald', sans-serif;
-	letter-spacing: 1px;
-	background-color: #34c9cb;
-    background-image: -webkit-linear-gradient(left, #4E5A5E 0%, #4E5A5E 50%, transparent 50%);
-    background-position: 100% 0;
-    background-size: 200% 200%;
-    color: transparent;
-    transition: .3s .1s ease-in-out;
-    -webkit-background-clip: text;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-	  background-position: 0 0;
-      outline: none;
-    }
-  }
-
-  p {
-    font-size: 1em;
-    line-height: 1.4;
-    width: 50%;
-	margin: 0 0 1.2em 0;
-    @include respond-to(medium-screens) { width: 100%; }
-	@include respond-to(handhelds) { width: 100%; }
-    @include respond-to(oldschool) { width: 100%; }
-  }
-
   .container {
     position: relative;
 	margin: 0 auto;
-	padding: 0 15px 120px 15px;
+	padding: 0 15px 80px 15px;
 	
 	@include respond-to(medium-screens) { padding: 0 50px 120px 50px; margin: 0 auto; }
 	@include respond-to(handhelds) { padding: 0 30px 60px 30px; margin: 0 auto; }
@@ -91,18 +34,6 @@ a {
     @include respond-to(oldschool) { margin: 0 auto; }
   }
   
-  .row {
-		margin: 0;
-	}
-	
-	.rider {
-		margin: 0;
-		line-height: 0.5;
-		letter-spacing: 3px;
-		font-family: 'Oswald', sans-serif;
-    	font-weight: 300;
-    	font-size: 1em;
-	}
 
   .wide-screen {
     @include respond-to(medium-screens) { display: none; }

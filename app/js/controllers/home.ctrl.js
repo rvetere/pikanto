@@ -59,9 +59,9 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
             $(window).scroll(function() {
                 var scrollTop = document.body.scrollTop || $(window).scrollTop();
                 if (scrollTop >= 866) {
-                    $('.navbar-header').addClass('affix-top');
+                    $('.navbar').addClass('affix-top');
                 } else {
-                    $('.navbar-header').removeClass('affix-top');
+                    $('.navbar').removeClass('affix-top');
                 }
             });
         } else {

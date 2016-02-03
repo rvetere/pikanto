@@ -11,6 +11,8 @@
 	padding: 30px 0 30px 0;
 	width: 100%;
 	display: inline-block;
+	height: 280px;
+	transition: height 1s;
  }
 
 .navbar ul.navbar-nav li {
@@ -20,18 +22,25 @@
 	font-family: 'Khand', sans-serif;
 	font-weight: 300;
 	margin: 0 5% 0 0;
-	padding: 80px 0 0 0;
+	padding: 90px 0 0 0;
 }
 
 .navbar ul.navbar-nav li.nav-brand {
+	width: 217px;
+    height: 180px;
+	margin: 0 6% 0 1%;
+	padding: 10px 0 0 0;
+}
+
+.navbar ul.navbar-nav li.nav-brand a {
 	background-image: url(../../images/logo_steakhouse.png);
 	background-position:center top;
 	background-repeat: no-repeat;
 	width: 217px;
     height: 180px;
-	margin: 0 6% 0 1%;
 	background-size: 100%;
-	transition: width 2s, height 2s;
+	transition: width 1s, height 1s;
+	display: inline-block;
 }
 
 .navbar ul.navbar-nav li a {
@@ -52,18 +61,19 @@
 .navbar.affix-top {
 	position: fixed;
     z-index: 2000;
-    height: 280px;
+    height: 200px;
     width: 100%;
     border: 0;
 }
 
 .navbar.affix-top ul.navbar-nav {
 	background-color: #201e1e;
+	height: 180px;
  }
 
-.navbar.affix-top ul.navbar-nav li.nav-brand {
-	width: 121px;
-    height: 100px;
+.navbar.affix-top ul.navbar-nav li.nav-brand a {
+	width: 123px;
+    height: 115px;
 	background-size: 100%;
 }
 

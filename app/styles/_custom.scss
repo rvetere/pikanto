@@ -10,6 +10,7 @@ body, html {
 	font-size: 100%;
 	padding: 0;
 	margin: 0;
+	height: 100%;
 
 	@include respond-to(handhelds) {
 		font-size: 80%;
@@ -127,6 +128,21 @@ div.info-text span {
 	margin: 0 auto;
 }
 
+.wellcome {
+	width: 100%;
+    height: 100vh;
+}
+
+.wellcome div {
+	background-image: url(../../images/heisser_stein.png);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-clip: border-box;
+	width: 100%;
+    min-height: 100%;
+	background-position: center top;
+}
+
 .googledocs {
 	
 }
@@ -204,6 +220,36 @@ div.info-text span {
 
 .googledocs table p:first-child{
 	font-weight: 600;
+}
+
+.googledocs.galerie .google-doc p{
+	width: 30%;
+	margin: 0 1.5% 3% 1.5%;
+	float: left;
+	overflow: hidden;
+}
+
+.googledocs.galerie .google-doc p:first-child{
+	width: 30%;
+	float: left;
+}
+
+.googledocs.galerie .google-doc p span{
+	display: inherit !important;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.googledocs.galerie .google-doc p span img{
+    -webkit-filter: grayscale(1);
+	filter: grayscale(1);
+	transition: filter 1s;
+}
+
+.googledocs.galerie .google-doc p span img:hover{
+	-webkit-filter: none;
+    filter: none;
 }
 
 .ueberuns {

@@ -206,12 +206,6 @@ div.info-text span {
 	text-align: left;
 }
 
-.googledocs.contact table td{
-	width: 50%;
-	text-align: left;
-	padding: 0 0 0 0;
-}
-
 .googledocs table p{
 	line-height: 1.2em;
 	margin: 0;
@@ -222,6 +216,25 @@ div.info-text span {
 	font-weight: 600;
 }
 
+/* ******************   a la carte */
+.googledocs.alacarte table tr:hover{
+	background-color: #F0F0F0;
+}
+
+.googledocs.alacarte table td{
+	padding: 0;
+}
+
+.googledocs.alacarte table td:first-child{
+	width: 70%;
+	text-align: left;
+}
+
+.googledocs.alacarte table p{
+	padding: 1px 0 1px 1px;
+}
+
+/* ******************   galerie */
 .googledocs.galerie .google-doc p{
 	width: 30%;
 	margin: 0 1.5% 3% 1.5%;
@@ -252,12 +265,21 @@ div.info-text span {
     filter: none;
 }
 
+/* ******************   ueber uns */
+
 .ueberuns {
 	background-image: url(../../images/heisser_stein.png);
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 300px;
 	color: #f9f8f3;
+}
+
+/* ******************   contact */
+.googledocs.contact table td{
+	width: 50%;
+	text-align: left;
+	padding: 0 0 0 0;
 }
 
 .pt-page-kontakt {

@@ -8,7 +8,7 @@
 .navbar ul.navbar-nav {
 	list-style: none;
 	text-align: center;
-	padding: 30px 0 30px 0;
+	padding: 50px 0 0 0;
 	width: 100%;
 	display: inline-block;
 	height: 280px;
@@ -22,14 +22,24 @@
 	font-family: 'Khand', sans-serif;
 	font-weight: 300;
 	margin: 0 5% 0 0;
-	padding: 90px 0 0 0;
 }
 
 .navbar ul.navbar-nav li.nav-brand {
 	width: 217px;
     height: 180px;
 	margin: 0 6% 0 1%;
-	padding: 10px 0 0 0;
+}
+
+.navbar ul.navbar-nav li a {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	color: #f9f8f3;
+	text-decoration: none;
+	font-size: 24px;
+	vertical-align: top;
+	display: inline-block;
+    padding: 86px 0 0 0;
 }
 
 .navbar ul.navbar-nav li.nav-brand a {
@@ -41,15 +51,6 @@
 	background-size: 100%;
 	transition: width 1s, height 1s;
 	display: inline-block;
-}
-
-.navbar ul.navbar-nav li a {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	color: #f9f8f3;
-	text-decoration: none;
-	font-size: 24px;
 }
 
 .navbar ul.navbar-nav li a:hover {

@@ -28,6 +28,13 @@ angular.module('app').directive('googleDoc', function appVersion() {
 					render = '<div class="lunch-menu table-one"><table>' + table1.html()
 						+ '</table></div><div class="lunch-menu table-two"><table>' + table2.html() + '</table></div>';
 				$('.google-doc', $element).html( render );
+			} else if ($attrs.type === 'alacarte-menu') {
+				var table1 = $build.find('table:eq(0)'),
+					table2 = $build.find('table:eq(1)'),
+					table3 = $build.find('table:eq(2)'),
+					table4 = $build.find('table:eq(3)'),
+					render = '<div class="lunch-menu table-one"><table>' + table1.html() + '</table></div><div class="lunch-menu table-two"><table>' + table2.html() + '</table></div><div class="lunch-menu table-three"><table>' + table3.html() + '</table></div><div class="lunch-menu table-four"><table>' + table4.html() + '</table></div>';
+				$('.google-doc', $element).html( render );
 			} else {
 				$('.google-doc', $element).html( $($build[0]).html() );
 			}

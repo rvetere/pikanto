@@ -58,7 +58,7 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         if (viewportW > 1025) {
             $(window).scroll(function() {
                 var scrollTop = document.body.scrollTop || $(window).scrollTop();
-                if (scrollTop >= 600) {
+                if (scrollTop >= 500) {
                     $('.navbar').addClass('affix-top');
                 } else {
                     $('.navbar').removeClass('affix-top');

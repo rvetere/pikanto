@@ -177,13 +177,13 @@ div.info-text span {
 }
 
 .googledocs .lunch-menu{
-	width: 48%;
-	padding: 0 0 0 2%;
+	width: 50%;
+	padding: 0 0 0 3%;
 	float: left;
 }
 
-.googledocs .lunch-menu.table-one{
-	padding: 0 2% 0 0;
+.googledocs .lunch-menu.table-one, .googledocs .lunch-menu.table-three{
+	padding: 0 3% 0 0;
 	border-right: 1px solid #201e1e;
 }
 
@@ -218,20 +218,40 @@ div.info-text span {
 
 /* ******************   a la carte */
 .googledocs.alacarte table tr:hover{
-	background-color: #F0F0F0;
+	background-color: rgba(32, 30, 30, 0.08);
 }
 
 .googledocs.alacarte table td{
 	padding: 0;
+	height: 22px;
 }
 
-.googledocs.alacarte table td:first-child{
+.googledocs.alacarte .table-one table td:first-child{
 	width: 70%;
 	text-align: left;
 }
 
+.googledocs.alacarte .table-two table td{
+	width: 13%;
+}
+
+.googledocs.alacarte .table-two table td:first-child{
+	width: 48%;
+}
+
 .googledocs.alacarte table p{
 	padding: 1px 0 1px 1px;
+	font-weight: 300;
+}
+
+.googledocs.alacarte p.titel.weinpdf {
+	clear: both;
+}
+
+.googledocs.alacarte p.titel.weinpdf a {
+	color: #201e1e;
+	font-family: 'Khand', sans-serif;
+	font-size: 18px;
 }
 
 /* ******************   galerie */
@@ -258,6 +278,7 @@ div.info-text span {
     -webkit-filter: grayscale(1);
 	filter: grayscale(1);
 	transition: filter 1s;
+	-webkit-transition: all .6s ease;
 }
 
 .googledocs.galerie .google-doc p span img:hover{

@@ -126,6 +126,8 @@ div.info-text span {
 	width: 100%;
 	height: 200px;
 	margin: 0 auto;
+	background-position: center top;
+	background-size: cover;
 }
 
 .wellcome {
@@ -136,7 +138,7 @@ div.info-text span {
 .wellcome div {
 	background-image: url(../../images/heisser_stein.png);
 	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background-size: cover;
 	background-clip: border-box;
 	width: 100%;
     min-height: 100%;
@@ -187,6 +189,10 @@ div.info-text span {
 	border-right: 1px solid #201e1e;
 }
 
+/*.googledocs table tr:hover{
+	background-color: rgba(184, 126, 50, 0.16);
+}*/
+
 .googledocs table{
 	width: 100%;
 	float: left;
@@ -196,7 +202,7 @@ div.info-text span {
 }
 
 .googledocs table td{
-	padding: 0 0 14px 0;
+	padding: 3px 6px;
 	vertical-align: bottom;
 	text-align: right;
 }
@@ -210,6 +216,7 @@ div.info-text span {
 	line-height: 1.2em;
 	margin: 0;
 	padding: 0;
+	min-height: 16px;
 }
 
 .googledocs table p:first-child{
@@ -217,10 +224,6 @@ div.info-text span {
 }
 
 /* ******************   a la carte */
-.googledocs.alacarte table tr:hover{
-	background-color: rgba(32, 30, 30, 0.08);
-}
-
 .googledocs.alacarte table td{
 	padding: 0;
 	height: 22px;
@@ -289,7 +292,7 @@ div.info-text span {
 /* ******************   ueber uns */
 
 .ueberuns {
-	background-image: url(../../images/heisser_stein.png);
+	background-image: url(../../images/stripes10.png);
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 300px;
@@ -304,6 +307,20 @@ div.info-text span {
 }
 
 .pt-page-kontakt {
-	background-color: #201e1e;
+	background-color: rgb(62, 46, 25);
 	color: #f9f8f3;
+}
+
+.googledocs.contact .map{
+	float: left;
+	width: 50%;
+	padding-top: 60px;
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
+	-webkit-transition: all .6s ease;
+}
+
+.googledocs.contact .map:hover{
+	-webkit-filter: none;
+    filter: none;
 }

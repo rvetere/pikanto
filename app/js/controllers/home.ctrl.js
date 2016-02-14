@@ -74,27 +74,6 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
             $(document.body).toggleClass('pt-hover');
         });
 
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            responsiveClass: true,
-            navText: ['<i class="icn-ios-arrow-left"></i>', '<i class="icn-ios-arrow-right"></i>'],
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                },
-                500: {
-                    items: 1,
-                    nav: true
-                },
-                1025: {
-                    items: 1,
-                    nav: true,
-                    loop: false
-                }
-            }
-        });
-
         $('.video-play-btn').on('click', function(e) {
             e.preventDefault();
             var $video = $(this).prev();

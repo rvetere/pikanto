@@ -1,326 +1,339 @@
 /* General Demo Style */
 
 *, *:after, *:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body, html {
-	font-size: 100%;
-	padding: 0;
-	margin: 0;
-	height: 100%;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
 
-	@include respond-to(handhelds) {
-		font-size: 80%;
-	}
-	@include respond-to(oldschool) {
-		font-size: 80%;
-	}
+    @include respond-to(handhelds) {
+        font-size: 80%;
+    }
+
+
+    @include respond-to(oldschool) {
+        font-size: 80%;
+    }
 }
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before, .clearfix:after {
-	content: " ";
-	display: table;
+    content: " ";
+    display: table;
 }
 
 .clearfix:after {
-	clear: both;
+    clear: both;
 }
 
 body {
-	font-family: 'Cabin Condensed', sans-serif;
-	color: #201e1e;
-	background-color: #f9f8f3;
-	font-weight: 300;
-	font-size: 14px;
+    font-family: 'Cabin Condensed', sans-serif;
+    color: #201e1e;
+    background-color: #f9f8f3;
+    font-weight: 300;
+    font-size: 14px;
 
-	/*@include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);*/
+    /*@include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);*/
 }
 
 a {
-	color: #ddd;
-	text-decoration: none;
+    color: #ddd;
+    text-decoration: none;
 
-	&:focus, &:visited {
-		color: #ddd;
-		text-decoration: none;
-	}
+    &:focus, &:visited {
+        color: #ddd;
+        text-decoration: none;
+    }
 }
 
 a:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .wrapper, .main-content, .view {
-	height: 100%;
+    height: 100%;
 }
 
 .pt-nav {
-	float: right;
-	padding: 46px 60px 30px 0;
-	height: 100px;
+    float: right;
+    padding: 46px 60px 30px 0;
+    height: 100px;
 }
 
 div.info-text {
-	color: #4E5A5E;
-	font-size: 0.8em;
-	line-height: 1em;
-	position: absolute;
-	right: 240px;
-	top: 45px;
-	
-	@include respond-to(medium-screens) {
-		display: none;
-	}
-	@include respond-to(handhelds) {
-		display: none;
-	}
-	@include respond-to(oldschool) {
-		display: none;
-	}
+    color: #4E5A5E;
+    font-size: 0.8em;
+    line-height: 1em;
+    position: absolute;
+    right: 240px;
+    top: 45px;
+
+    @include respond-to(medium-screens) {
+        display: none;
+    }
+
+
+    @include respond-to(handhelds) {
+        display: none;
+    }
+
+
+    @include respond-to(oldschool) {
+        display: none;
+    }
 }
 
 div.info-text span {
-	padding: 0 6px;
+    padding: 0 6px;
 }
 
 .pt-nav a {
-	color: #34c9cb;
-	font-size: 2.2em;
-	padding: 0 0 0 10px;
-	transition: color .3s ease;
-	text-decoration: none;
-	
-	@include respond-to(medium-screens) {
-		display: none;
-	}
-	@include respond-to(handhelds) {
-		display: none;
-	}
-	@include respond-to(oldschool) {
-		display: none;
-	}
+    color: #34c9cb;
+    font-size: 2.2em;
+    padding: 0 0 0 10px;
+    transition: color .3s ease;
+    text-decoration: none;
+
+    @include respond-to(medium-screens) {
+        display: none;
+    }
+
+
+    @include respond-to(handhelds) {
+        display: none;
+    }
+
+
+    @include respond-to(oldschool) {
+        display: none;
+    }
 }
 
 .pt-nav a.icn-burger {
-	padding: 0 0 0 36px;
-	font-size: 2.2em;
-	
-	@include respond-to(medium-screens) {
-		display: block;
-	}
-	@include respond-to(handhelds) {
-		display: block;
-	}
-	@include respond-to(oldschool) {
-		display: block;
-	}
+    padding: 0 0 0 36px;
+    font-size: 2.2em;
+
+    @include respond-to(medium-screens) {
+        display: block;
+    }
+
+
+    @include respond-to(handhelds) {
+        display: block;
+    }
+
+
+    @include respond-to(oldschool) {
+        display: block;
+    }
 }
 
 .stripe-image {
-	background-repeat: no-repeat;
-	background-clip: border-box;
-	width: 100%;
-	height: 200px;
-	margin: 0 auto;
-	background-position: center top;
-	background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    background-position: center top;
+    background-size: cover;
 }
 
 .wellcome {
-	width: 100%;
+    width: 100%;
     height: 100vh;
+    padding: 0 !important;
 }
 
 .wellcome div {
-	background-image: url(../../images/heisser_stein.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-clip: border-box;
-	width: 100%;
+    background-image: url(../../images/heisser_stein.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    width: 100%;
     min-height: 100%;
-	background-position: center top;
+    background-position: center top;
 }
 
-.googledocs {
-	
-}
+.googledocs {}
 
 .googledocs h1, .ueberuns h1 {
-	font-size: 24px;
-	font-family: 'Khand', sans-serif;
-	margin: 0 auto;
-	padding: 60px 0 0 0;
-	font-weight: 400;
-	line-height: 1.2em;
-	text-align: center;
+    font-size: 24px;
+    font-family: 'Khand', sans-serif;
+    margin: 0 auto;
+    padding: 60px 0 0 0;
+    font-weight: 400;
+    line-height: 1.2em;
+    text-align: center;
 }
 
 .googledocs h2, .ueberuns h2 {
-	font-size: 16px;
-	font-family: 'Khand', sans-serif;
-	margin: 0 auto;
-	padding: 60px 0 0 0;
-	font-weight: 400;
-	line-height: 1.2em;
-	text-align: left;
+    font-size: 16px;
+    font-family: 'Khand', sans-serif;
+    margin: 0 auto;
+    padding: 60px 0 0 0;
+    font-weight: 400;
+    line-height: 1.2em;
+    text-align: left;
 }
 
 .googledocs p.titel {
-	margin: 0 auto 2em auto;
+    margin: 0 auto 2em auto;
     text-align: center;
 }
 
 .googledocs p.titel span {
-	font-size: 12px;
+    font-size: 12px;
 }
 
-.googledocs .lunch-menu{
-	width: 50%;
-	padding: 0 0 0 3%;
-	float: left;
+.googledocs .lunch-menu {
+    width: 50%;
+    padding: 0 0 0 3%;
+    float: left;
 }
 
-.googledocs .lunch-menu.table-one, .googledocs .lunch-menu.table-three{
-	padding: 0 3% 0 0;
-	border-right: 1px solid #201e1e;
+.googledocs .lunch-menu.table-one, .googledocs .lunch-menu.table-three {
+    padding: 0 3% 0 0;
+    border-right: 1px solid #201e1e;
 }
 
 /*.googledocs table tr:hover{
 	background-color: rgba(184, 126, 50, 0.16);
 }*/
 
-.googledocs table{
-	width: 100%;
-	float: left;
-	font-size: 16px;
-	text-align: left;
-	padding: 0 0 0 2%;
+.googledocs table {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    text-align: left;
+    padding: 0 0 0 2%;
 }
 
-.googledocs table td{
-	padding: 3px 6px;
-	vertical-align: bottom;
-	text-align: right;
+.googledocs table td {
+    padding: 3px 6px;
+    vertical-align: bottom;
+    text-align: right;
 }
 
-.googledocs table td:first-child{
-	width: 85%;
-	text-align: left;
+.googledocs table td:first-child {
+    width: 85%;
+    text-align: left;
 }
 
-.googledocs table p{
-	line-height: 1.2em;
-	margin: 0;
-	padding: 0;
-	min-height: 16px;
+.googledocs table p {
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+    min-height: 16px;
 }
 
-.googledocs table p:first-child{
-	font-weight: 600;
+.googledocs table p:first-child {
+    font-weight: 600;
 }
 
 /* ******************   a la carte */
-.googledocs.alacarte table td{
-	padding: 0;
-	height: 22px;
+.googledocs.alacarte table td {
+    padding: 0;
+    height: 22px;
 }
 
-.googledocs.alacarte .table-one table td:first-child{
-	width: 70%;
-	text-align: left;
+.googledocs.alacarte .table-one table td:first-child {
+    width: 70%;
+    text-align: left;
 }
 
-.googledocs.alacarte .table-two table td{
-	width: 13%;
+.googledocs.alacarte .table-two table td {
+    width: 13%;
 }
 
-.googledocs.alacarte .table-two table td:first-child{
-	width: 48%;
+.googledocs.alacarte .table-two table td:first-child {
+    width: 48%;
 }
 
-.googledocs.alacarte table p{
-	padding: 1px 0 1px 1px;
-	font-weight: 300;
+.googledocs.alacarte table p {
+    padding: 1px 0 1px 1px;
+    font-weight: 300;
 }
 
 .googledocs.alacarte p.titel.weinpdf {
-	clear: both;
+    clear: both;
 }
 
 .googledocs.alacarte p.titel.weinpdf a {
-	color: #201e1e;
-	font-family: 'Khand', sans-serif;
-	font-size: 18px;
+    color: #201e1e;
+    font-family: 'Khand', sans-serif;
+    font-size: 18px;
 }
 
 /* ******************   galerie */
-.googledocs.galerie .google-doc p{
-	width: 30%;
-	margin: 0 1.5% 3% 1.5%;
-	float: left;
-	overflow: hidden;
+.googledocs.galerie .google-doc p {
+    width: 30%;
+    margin: 0 1.5% 3% 1.5%;
+    float: left;
+    overflow: hidden;
 }
 
-.googledocs.galerie .google-doc p:first-child{
-	width: 30%;
-	float: left;
+.googledocs.galerie .google-doc p:first-child {
+    width: 30%;
+    float: left;
 }
 
-.googledocs.galerie .google-doc p span{
-	display: inherit !important;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+.googledocs.galerie .google-doc p span {
+    display: inherit !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.googledocs.galerie .google-doc p span img{
+.googledocs.galerie .google-doc p span img {
     -webkit-filter: grayscale(1);
-	filter: grayscale(1);
-	transition: filter 1s;
-	-webkit-transition: all .6s ease;
+    filter: grayscale(1);
+    transition: filter 1s;
+    -webkit-transition: all .6s ease;
 }
 
-.googledocs.galerie .google-doc p span img:hover{
-	-webkit-filter: none;
+.googledocs.galerie .google-doc p span img:hover {
+    -webkit-filter: none;
     filter: none;
 }
 
 /* ******************   ueber uns */
 
 .ueberuns {
-	background-image: url(../../images/stripes10.png);
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 300px;
-	color: #f9f8f3;
+    background-image: url(../../images/stripes10.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    color: #f9f8f3;
 }
 
 /* ******************   contact */
-.googledocs.contact table td{
-	width: 50%;
-	text-align: left;
-	padding: 0 0 0 0;
+.googledocs.contact table td {
+    width: 50%;
+    text-align: left;
+    padding: 0 0 0 0;
 }
 
 .pt-page-kontakt {
-	background-color: rgb(62, 46, 25);
-	color: #f9f8f3;
+    background-color: rgb(62, 46, 25);
+    color: #f9f8f3;
 }
 
-.googledocs.contact .map{
-	float: left;
-	width: 50%;
-	padding-top: 60px;
-	-webkit-filter: grayscale(1);
-	filter: grayscale(1);
-	-webkit-transition: all .6s ease;
+.googledocs.contact .map {
+    float: left;
+    width: 50%;
+    padding-top: 60px;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    -webkit-transition: all .6s ease;
 }
 
-.googledocs.contact .map:hover{
-	-webkit-filter: none;
+.googledocs.contact .map:hover {
+    -webkit-filter: none;
     filter: none;
 }

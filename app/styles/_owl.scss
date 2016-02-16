@@ -8,15 +8,15 @@
         position: absolute;
 		top: 50%;
 		width: 50px;
-		height: 300px;
-		margin-top: -200px;
+		height: 700px;
+		margin-top: -350px;
 		font-size: 4.6em;
 		background-repeat: no-repeat;
 		opacity: 0.4;
 		background-position: center;
 
         &.disabled {
-        	opacity: 0.0;
+        	opacity: 0.1;
         }
 		
 		i {

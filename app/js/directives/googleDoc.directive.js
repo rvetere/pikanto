@@ -18,8 +18,21 @@ angular.module('app').directive('googleDoc', function appVersion() {
         request.done(function(msg) {
             // cleanup some basic things
             var $build = $('<div>' + msg + '</div>');
+
+            var styleParts = $build.find('style').html().split(';'),
+                css = '';
+            for (var i = 0, len = styleParts.length; i < len; i++) {
+                if (styleParts[i].indexOf('@import') > -1) {
+                    css += styleParts[i] + ';';
+                }
+            }
+
             $build.find('meta').remove();
             $build.find('style').remove();
+
+            if (css !== '') {
+                $('head').append('<style class="google-styles">' + css + '</style>');
+            }
 
             // process html type based
             if ($attrs.type === 'lunch-menu') {

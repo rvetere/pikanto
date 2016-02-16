@@ -255,6 +255,10 @@ div.info-text span {
     width: 48%;
 }
 
+.googledocs.alacarte table tr:hover {
+    background-color: rgba(125,84,30,0.15);
+}
+
 .googledocs.alacarte table p {
     padding: 1px 0 1px 1px;
     font-weight: 300;
@@ -262,6 +266,7 @@ div.info-text span {
 
 .googledocs.alacarte p.titel.weinpdf {
     clear: both;
+	margin: 0 auto 1em auto;
 }
 
 .googledocs.alacarte p.titel.weinpdf a {
@@ -304,12 +309,20 @@ div.info-text span {
 
 /* ******************   ueber uns */
 
-.ueberuns {
-    background-image: url(../../images/stripes10.png);
+.pt-page-ueberuns {
+    background-image: url(../../images/team.jpg);
     background-repeat: no-repeat;
+	background-position: left bottom;
     width: 100%;
-    height: 300px;
+	background-size: cover;
+	height: 450px;
+}
+
+.ueberuns {
     color: #f9f8f3;
+	background-color: rgba(62,46,25,0.8);
+	padding: 0 20px 20px 20px;
+	margin: 20px 0 0 0;
 }
 
 /* ******************   contact */

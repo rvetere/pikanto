@@ -57,7 +57,7 @@ angular.module('app').directive('googleDoc', function appVersion() {
                 $('.owl-carousel').owlCarousel({
                     loop: true,
                     responsiveClass: true,
-                    navText: ['<i class="icn-ios-arrow-left"></i>', '<i class="icn-ios-arrow-right"></i>'],
+                    navText: ['<i class="icon-angle-left"></i>', '<i class="icon-angle-right"></i>'],
                     responsive: {
                         0: {
                             items: 1,

@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "pikanto";
-  src:url("/fonts/pikanto.eot");
-  src:url("/fonts/pikanto.eot?#iefix") format("embedded-opentype"),
-  url("/fonts/pikanto.woff") format("woff"),
-  url("/fonts/pikanto.ttf") format("truetype"),
-  url("/fonts/pikanto.svg#pikanto") format("svg");
+  font-family: "steakhouse";
+  src:url("fonts/steakhouse.eot");
+  src:url("fonts/steakhouse.eot?#iefix") format("embedded-opentype"),
+    url("fonts/steakhouse.woff") format("woff"),
+    url("fonts/steakhouse.ttf") format("truetype"),
+    url("fonts/steakhouse.svg#steakhouse") format("svg");
   font-weight: normal;
   font-style: normal;
 
 }
 
 [data-icon]:before {
-  font-family: "pikanto" !important;
+  font-family: "steakhouse" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -25,9 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icn-"]:before,
-[class*=" icn-"]:before {
-  font-family: "pikanto" !important;
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "steakhouse" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -38,60 +38,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icn-nav:before {
+.icon-angle-left:before {
   content: "\61";
 }
-.icn-chevron-down:before {
+.icon-angle-right:before {
   content: "\62";
 }
-.icn-chevron-up:before {
+.icon-tripadvisor:before {
   content: "\63";
 }
-.icn-websites:before {
-  content: "\69";
-}
-.icn-chaplin:before {
-  content: "\6a";
-}
-.icn-linkedin:before {
-  content: "\6b";
-}
-.icn-facebook:before {
-  content: "\6d";
-}
-.icn-gplus:before {
-  content: "\6e";
-}
-.icn-twitter:before {
-  content: "\6f";
-}
-.icn-app-design:before {
+.icon-facebook-official:before {
   content: "\64";
 }
-.icn-animation:before {
+.icon-book-read-streamline:before {
   content: "\65";
-}
-.icn-others:before {
-  content: "\68";
-}
-.icn-contact:before {
-  content: "\70";
-}
-.icn-play:before {
-  content: "\74";
-}
-.icn-sound:before {
-  content: "\75";
-}
-.icn-pikanto:before {
-  content: "\66";
-}
-.icn-ios-arrow-left:before {
-  content: "\67";
-}
-.icn-ios-arrow-right:before {
-  content: "\6c";
-}
-.icn-playback-pause:before {
-  content: "\71";
 }

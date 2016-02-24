@@ -40,6 +40,8 @@
 	vertical-align: top;
 	display: inline-block;
     padding: 86px 0 0 0;
+	opacity: 1;
+	transition: opacity 0.4s;
 }
 
 .navbar ul.navbar-nav li.nav-brand a {
@@ -51,10 +53,14 @@
 	background-size: 100%;
 	transition: width 1s, height 1s;
 	display: inline-block;
+	opacity: 1;
+	transition: opacity 0.4s;
 }
 
 .navbar ul.navbar-nav li a:hover {
 	text-decoration: none;
+	font-weight: 300 !important;
+	opacity: 0.6;
 }
 
 // nach dem scrollen

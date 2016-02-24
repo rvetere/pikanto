@@ -45,6 +45,8 @@ body {
 a {
     color: #ddd;
     text-decoration: none;
+	opacity: 1;
+	transition: opacity 0.4s;
 
     &:focus, &:visited {
         color: #ddd;
@@ -54,6 +56,7 @@ a {
 
 a:hover {
     color: #fff;
+	opacity: 0.6;
 }
 
 .wrapper, .main-content, .view {
@@ -334,6 +337,10 @@ div.info-text span {
 }
 
 /* ******************   contact */
+.googledocs.contact table {
+    margin: 0 0 20px 0;
+}
+
 .googledocs.contact table td {
     width: 50%;
     text-align: left;
@@ -357,4 +364,9 @@ div.info-text span {
 .googledocs.contact .map:hover {
     -webkit-filter: none;
     filter: none;
+}
+
+.contact-more {
+	margin: 0 0 12px 0;
+	font-size: 16px;
 }

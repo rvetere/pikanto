@@ -28,6 +28,10 @@
 	width: 217px;
     height: 180px;
 	margin: 0 6% 0 1%;
+	
+	@include respond-to(medium-screens) {
+		width: 150px;
+	}
 }
 
 .navbar ul.navbar-nav li a {
@@ -55,6 +59,10 @@
 	display: inline-block;
 	opacity: 1;
 	transition: opacity 0.4s;
+	
+	@include respond-to(medium-screens) {
+		width: 150px;
+	}
 }
 
 .navbar ul.navbar-nav li a:hover {
@@ -98,7 +106,7 @@
   float: left;
   margin: 45px 0 0 30px;
   
-  @include respond-to(medium-screens) {
+  	@include respond-to(medium-screens) {
 		margin: 45px 0 0 30px;
 	}
 	@include respond-to(handhelds) {

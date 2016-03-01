@@ -37,10 +37,10 @@
     left: 9px;
 
     @include respond-to(medium-screens) {
-        padding: 39px 54px 39px 35px;
+        padding: 0px 54px 39px 35px;
         width: 600px !important;
         height: 476px;
-        margin: 64px auto 0 auto;
+        margin: 0px auto 0 auto;
         left: 9px;
         background-size: 600px;
     }

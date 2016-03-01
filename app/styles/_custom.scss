@@ -198,11 +198,25 @@ div.info-text span {
     width: 50%;
     padding: 0 0 0 3%;
     float: left;
+	
+	@include respond-to(medium-screens) {
+        width: 100%;
+    }	
+	@include respond-to(handhelds) {
+		width: 100%;
+    	padding: 0;
+    	float: none;
+    }
 }
 
 .googledocs .lunch-menu.table-one, .googledocs .lunch-menu.table-three {
     padding: 0 3% 0 0;
     border-right: 1px solid #201e1e;
+	
+	@include respond-to(medium-screens) {
+        padding: 0;
+    	border-right: 0px solid #201e1e;
+    }
 }
 
 /*.googledocs table tr:hover{
@@ -226,6 +240,13 @@ div.info-text span {
 .googledocs table td:first-child {
     width: 85%;
     text-align: left;
+	
+	@include respond-to(medium-screens) {
+		width: 75%;
+	}
+	@include respond-to(handhelds) {
+		width: 75%;
+    }
 }
 
 .googledocs table p {
@@ -241,7 +262,7 @@ div.info-text span {
 
 /* ******************   a la carte */
 .googledocs.alacarte .google-doc {
-        height: 980px;
+	height: 980px;
 }
 
 .googledocs.alacarte table td {
@@ -323,17 +344,23 @@ div.info-text span {
 .pt-page-ueberuns {
     background-image: url(../../images/team.jpg);
     background-repeat: no-repeat;
-	background-position: left bottom;
+	background-position: left top;
     width: 100%;
 	background-size: cover;
-	height: 450px;
+	height: 600px;
 }
 
 .ueberuns {
     color: #f9f8f3;
 	background-color: rgba(62,46,25,0.8);
-	padding: 0 20px 20px 20px;
-	margin: 20px 0 0 0;
+	padding: 20px 20px 20px 20px;
+}
+.ueberuns h1{
+	padding-top: 20px;
+}
+.ueberuns p{
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 /* ******************   contact */
@@ -364,6 +391,19 @@ div.info-text span {
 .googledocs.contact .map:hover {
     -webkit-filter: none;
     filter: none;
+}
+
+.googledocs.contact .map iframe {
+    width: 668px;
+	height: 420px;
+	
+	@include respond-to(medium-screens) {
+        width: 468px;
+    }
+}
+
+.googledocs.contact i {
+    margin: 0 10px 0 0;
 }
 
 .contact-more {

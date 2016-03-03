@@ -43,11 +43,20 @@ angular.module('app').directive('googleDoc', function appVersion() {
                 $('.google-doc', $element).html(render);
 			// Gallerie
 			} else if ($attrs.type === 'gallerie') {
+                var _findNextSpan = function($p) {
+                    var $span = $p.next().find('span');
+                    if ($span.length === 0 || $span.html().length === 0) {
+                        return _findNextSpan($p.next());
+                    } else {
+                        return $span;
+                    }
+                };
+
 				var render = '';
 				$build.find('p > span').each(function(i, el){
 					var galleryimg = $(el).find('img');
 					if (galleryimg.length > 0) {
-						var gallerytxt = $(el).parent().next().find('span');
+						var gallerytxt = _findNextSpan($(el).parent());
 						if (gallerytxt.html().length > 0) {
 							render += '<div class="gallerie-img">' + galleryimg.parent().html() + '</div><div class="gallerie-txt">' + gallerytxt.html() + '</div>';
 						}
@@ -71,7 +80,9 @@ angular.module('app').directive('googleDoc', function appVersion() {
                 $('.google-doc', $element).html(owlBuild);
 
                 $('.owl-carousel').owlCarousel({
-                    loop: true,
+                    loop: false,
+                    pagination : true,
+                    paginationNumbers: true,
                     responsiveClass: true,
 					scrollPerPage : true,
                     navText: ['<i class="icon-angle-left"></i>', '<i class="icon-angle-right"></i>'],
@@ -82,7 +93,7 @@ angular.module('app').directive('googleDoc', function appVersion() {
                         },
                         500: {
                             items: 1,
-                            nav: false
+                            nav: true
                         },
                         1025: {
                             items: 2,

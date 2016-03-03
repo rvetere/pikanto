@@ -54,9 +54,7 @@ exports.config = {
 			joinTo: {
 				'css/app.css': [
 					/^app/,
-					'bower_components/animate-css/animate.css',
-					'bower_components/owl.carousel/dist/assets/owl.carousel.css',
-					'bower_components/owl.carousel/dist/assets/owl.theme.default.css'
+					'bower_components/animate-css/animate.css'
 				]
 			}
 		}

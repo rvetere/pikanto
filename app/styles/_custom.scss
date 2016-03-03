@@ -268,7 +268,7 @@ div.info-text span {
 
 /* ******************   a la carte */
 .googledocs.alacarte .google-doc {
-	height: 980px;
+	min-height: 980px;
 }
 
 .googledocs.alacarte .lunch-menu {
@@ -317,13 +317,32 @@ div.info-text span {
     padding: 0 0 0 28px;
 }
 
-.owl-item.active:nth-child(n+2) {
+.owl-item.active {
     padding: 0 24px 0 0;
-    border-right: 1px solid #201e1e;
-	
+
+    .lunch-menu.table-two:before,
+    .lunch-menu.table-three:before,
+    .lunch-menu.table-four:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: -1px;
+        background: black;
+
+        @include respond-to(handhelds) {
+            display: none;
+        }
+        @include respond-to(medium-screens) {
+            display: none;
+        }
+    }
+
+
 	@include respond-to(medium-screens) {
         padding: 0;
-    	border-right: 0px solid #201e1e;
     }
 }
 

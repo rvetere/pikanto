@@ -1,10 +1,42 @@
 .navbar {
-	position: fixed;
     z-index: 2000;
     width: 100%;
     border: 0;
+	margin-bottom: 0;
+
+	@include respond-to(handhelds) {
+		position: fixed;
+	}
+	@include respond-to(medium-screens) {
+		position: fixed;
+	}
 }
 
+@include respond-to(medium-screens) {
+	.affix-top .navbar-header {
+		background: #3e2e19;
+	}
+}
+@include respond-to(handhelds) {
+	.affix-top .navbar-header {
+		background: #3e2e19;
+	}
+}
+
+.affix-top .pt-page.pt-page-home {
+	//top: 280px;
+	position: relative;
+	//margin-bottom: 280px;
+
+	@include respond-to(md-only) {
+		//top: 0px;
+		//margin-bottom: 0px;
+	}
+}
+.affix-top .navbar-collapse {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+}
 .navbar ul.navbar-nav {
 	list-style: none;
 	text-align: center;
@@ -12,7 +44,14 @@
 	width: 100%;
 	display: inline-block;
 	height: 280px;
-	transition: height 1s;
+	//transition: height 1s;
+
+	@include respond-to(md-only) {
+		height: 200px;
+	}
+	@include respond-to(handhelds) {
+		padding: 100px 0 0 40px;
+	}
  }
 
 .navbar ul.navbar-nav li {
@@ -22,6 +61,10 @@
 	font-family: 'Khand', sans-serif;
 	font-weight: 300;
 	margin: 0 5% 0 0;
+
+	@include respond-to(handhelds) {
+		margin: 0 2% 0 2%;
+	}
 }
 
 .navbar ul.navbar-nav li.nav-brand {
@@ -46,9 +89,16 @@
     padding: 86px 0 0 0;
 	opacity: 1;
 	transition: opacity 0.4s;
+
+	@include respond-to(medium-screens) {
+		font-size: 16px;
+	}
+	@include respond-to(handhelds) {
+		padding: 18px 0 18px 0;
+	}
 }
 
-.navbar ul.navbar-nav li.nav-brand a {
+.navbar ul.navbar-nav li.nav-brand a, div.navbar-brand {
 	background-image: url(../../images/logo_steakhouse.png);
 	background-position:center top;
 	background-repeat: no-repeat;
@@ -65,10 +115,41 @@
 	}
 }
 
-.navbar ul.navbar-nav li a:hover {
+// only visible on mobile
+.navbar-toggle {
+	z-index: 2000;
+	margin-top: 16px;
+}
+.navbar-brand {
+	width: 60px !important;
+	height: 50px !important;
+	margin: 10px;
+	position: relative;
+	z-index: 2000;
+}
+.navbar-collapse {
+	box-shadow: none !important;
+	background: #3e2e19;
+	position: relative;
+
+	@include respond-to(handhelds) {
+		padding: 64px 0;
+		top: -70px;
+		height: 100vh;
+	}
+	@include respond-to(medium-screens) {
+		padding: 64px 0;
+		top: -70px;
+		height: 100vh;
+	}
+}
+
+.navbar ul.navbar-nav li a:hover,
+.navbar ul.navbar-nav li a:focus {
 	text-decoration: none;
 	font-weight: 300 !important;
 	opacity: 0.6;
+	color: #f9f8f3;
 }
 
 // nach dem scrollen

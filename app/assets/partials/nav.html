@@ -1,11 +1,27 @@
-<div class="navbar" role="navigation">
-    <ul class="navbar-nav">
-        <li><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt="">Home</a></li>
-        <li><a href="#" data-ng-click="home.selectStripe('pt-page-mittagsmenu')" alt="">Mittagsmenu</a></li>
-        <li><a href="#" data-ng-click="home.selectStripe('pt-page-alacarte')" alt="">a la Carte</a></li>
-        <li class="nav-brand"><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt=""></a></li>
-        <li><a href="#" data-ng-click="home.selectStripe('pt-page-ueberuns')" alt="">Über uns</a></li>
-        <li><a href="#" data-ng-click="home.selectStripe('pt-page-galerie')" alt="">Galerie</a></li>
-        <li><a href="#" data-ng-click="home.selectStripe('pt-page-kontakt')" alt="">Kontakt</a></li>
-    </ul>
+<div class="navbar navbar-default" role="navigation">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand visible-xs"><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt=""></a></div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse animated">
+        <ul class="navbar-nav">
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt="">Home</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-mittagsmenu')" alt="">Mittagsmenu</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-alacarte')" alt="">a la Carte</a></li>
+            <li class="nav-brand hidden-xs"><a href="#" data-ng-click="home.selectStripe('pt-page-home')" alt=""></a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-ueberuns')" alt="">Über uns</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-galerie')" alt="">Galerie</a></li>
+            <li><a href="#" data-ng-click="home.selectStripe('pt-page-kontakt')" alt="">Kontakt</a></li>
+        </ul>
+    </div>
+    <!-- /.nav-collapse -->
 </div>

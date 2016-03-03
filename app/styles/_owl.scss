@@ -1,3 +1,15 @@
+@import "../bower_components/owl.carousel/src/scss/owl.carousel";
+@import "../bower_components/owl.carousel/src/scss/owl.theme.default";
+
+.owl-theme .owl-nav [class*='owl-'] {
+    background: none;
+    color: #3e2e19;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: none;
+    color: lighten(#3e2e19, 30);
+}
+
 .owl-carousel.owl-theme {
     .owl-item {
         width: 100%;
@@ -39,7 +51,7 @@
     @include respond-to(medium-screens) {
         padding: 0px 54px 39px 35px;
         width: 600px !important;
-        height: 476px;
+        height: auto;
         margin: 0px auto 0 auto;
         left: 9px;
         background-size: 600px;
@@ -49,7 +61,7 @@
     @include respond-to(handhelds) {
         padding: 20px 28px 20px 18px;
         width: 310px !important;
-        height: 276px;
+        height: auto;
         margin: 21px auto;
         left: 9px;
         background-size: 310px;
@@ -57,11 +69,11 @@
 
 
     @include respond-to(oldschool) {
-        padding: 16px 23px 16px 15px;
-        width: 250px !important;
-        height: 196px;
+        padding: 16px 7px 16px 0px;
+        width: 303px !important;
+        height: auto;
         margin: 21px auto;
-        left: 4px;
+        left: 2px;
         background-size: 250px;
     }
 }

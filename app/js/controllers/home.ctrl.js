@@ -42,9 +42,21 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
         $('body').removeClass('pt-hover');
         $('#nav-toggle').toggleClass('active');
 
-        var target = $('.' + index);
+        $('.navbar-collapse').removeClass('in');
+
+        var target = $('.' + index),
+            h = $('.navbar-header').height();
+        if (h === 0) {
+            h = 180;
+        }
+
+        var scrollTopH = target.offset().top - h;
+        if (index === 'pt-page-home') {
+            scrollTopH = 0;
+        }
+
         $('html,body').animate({
-            scrollTop: target.offset().top - 180
+            scrollTop: scrollTopH
         }, 1000);
     }
 
@@ -55,18 +67,15 @@ angular.module('app').controller('HomeCtrl', function HomeCtrl($timeout) {
     // private functions
 
     function _init() {
-        if (viewportW > 1025) {
-            $(window).scroll(function() {
-                var scrollTop = document.body.scrollTop || $(window).scrollTop();
-                if (scrollTop >= 500) {
-                    $('.navbar').addClass('affix-top');
-                } else {
-                    $('.navbar').removeClass('affix-top');
-                }
-            });
-        } else {
-            $('.navbar-header').addClass('affix-top');
-        }
+        const limit = viewportW > 1025 ? 500 : 300;
+        $(window).scroll(function() {
+            var scrollTop = document.body.scrollTop || $(window).scrollTop();
+            if (scrollTop >= limit) {
+                $('.navbar, .view').addClass('affix-top');
+            } else {
+                $('.navbar, .view').removeClass('affix-top');
+            }
+        });
 
         $('#nav-toggle').click(function(e) {
             e.preventDefault();

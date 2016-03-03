@@ -38,9 +38,23 @@ angular.module('app').directive('googleDoc', function appVersion() {
             if ($attrs.type === 'lunch-menu') {
                 var table1 = $build.find('table:eq(0)'),
                     table2 = $build.find('table:eq(1)'),
-                    render = '<div class="lunch-menu table-one"><table>' + table1.html()
-                        + '</table></div><div class="lunch-menu table-two"><table>' + table2.html() + '</table></div>';
+                    render = '<div class="lunch-menu table-1"><table>' + table1.html()
+                        + '</table></div><div class="lunch-menu table-2"><table>' + table2.html() + '</table></div>';
                 $('.google-doc', $element).html(render);
+			// Gallerie
+			} else if ($attrs.type === 'gallerie') {
+				var render = '';
+				$build.find('p > span').each(function(i, el){
+					var galleryimg = $(el).find('img');
+					if (galleryimg.length > 0) {
+						var gallerytxt = $(el).parent().next().find('span');
+						if (gallerytxt.html().length > 0) {
+							render += '<div class="gallerie-img">' + galleryimg.parent().html() + '</div><div class="gallerie-txt">' + gallerytxt.html() + '</div>';
+						}
+					}
+				});
+                $('.google-doc', $element).html(render);
+			// a la carte
             } else if ($attrs.type === 'alacarte-menu') {
                 var table1 = $build.find('table:eq(0)'),
                     table2 = $build.find('table:eq(1)'),
@@ -48,8 +62,10 @@ angular.module('app').directive('googleDoc', function appVersion() {
                     table4 = $build.find('table:eq(3)');
 
                 var owlBuild = '<div class="owl-carousel owl-theme">' +
-                    '<div><div class="lunch-menu table-one"><table>' + table1.html() + '</table></div><div class="lunch-menu table-two"><table>' + table2.html() + '</table></div></div>' +
-                    '<div><div class="lunch-menu table-three"><table>' + table3.html() + '</table></div><div class="lunch-menu table-four"><table>' + table4.html() + '</table></div></div>' +
+                    '<div><div class="lunch-menu table-one"><table>' + table1.html() + '</table></div></div>' +
+                    '<div><div class="lunch-menu table-two"><table>' + table2.html() + '</table></div></div>' +
+					'<div><div class="lunch-menu table-three"><table>' + table3.html() + '</table></div></div>' +
+                    '<div><div class="lunch-menu table-four"><table>' + table4.html() + '</table></div></div>' +
                     '</div>';
 
                 $('.google-doc', $element).html(owlBuild);
@@ -57,20 +73,20 @@ angular.module('app').directive('googleDoc', function appVersion() {
                 $('.owl-carousel').owlCarousel({
                     loop: true,
                     responsiveClass: true,
+					scrollPerPage : true,
                     navText: ['<i class="icon-angle-left"></i>', '<i class="icon-angle-right"></i>'],
                     responsive: {
                         0: {
                             items: 1,
-                            nav: true
+                            nav: false
                         },
                         500: {
                             items: 1,
-                            nav: true
+                            nav: false
                         },
                         1025: {
-                            items: 1,
-                            nav: true,
-                            loop: false
+                            items: 2,
+                            nav: true
                         }
                     }
                 });

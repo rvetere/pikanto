@@ -21,7 +21,7 @@ a {
 	margin: 0 auto;
 	padding: 0 15px 80px 15px;
 	
-	@include respond-to(medium-screens) { padding: 0 50px 120px 50px; margin: 0 auto; }
+	@include respond-to(medium-screens) { padding: 0 50px 40px 50px; margin: 0 auto; }
 	@include respond-to(handhelds) { padding: 0 30px 60px 30px; margin: 0 auto; }
     @include respond-to(oldschool) { padding: 0 30px 40px 30px; margin: 0 auto; }
   }
@@ -66,24 +66,6 @@ a {
       }
     }
   }
-}
-
-.pt-page-bayer,.pt-page-melanie, .pt-page-about, .pt-page-illustration, .pt-page-wildstar, .pt-page-contact {
-  /*@include gradient-horizontal-ff(#1a1a1a, #2a2a2a, 0%, 100%);*/
-  padding-top: 120px;
-  
-	@include respond-to(handhelds) { padding-top: 30px; }
-    @include respond-to(oldschool) { padding-top: 30px; }
-}
-
-.pt-page-bayer,.pt-page-about, .pt-page-illustration, .pt-page-wildstar, .pt-page-contact {
-  box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.3);
-}
-
-.pt-page-illustration {
-  /*@include gradient-horizontal-ff(#939393, #b4b4b4, 0%, 100%);*/
-  background-color: #1b81b1;
-  color: #fff;
 }
 
 .pt-page-contact {

@@ -3,6 +3,7 @@
     width: 100%;
     border: 0;
 	margin-bottom: 0;
+	position: fixed;
 
 	@include respond-to(handhelds) {
 		position: fixed;
@@ -23,20 +24,6 @@
 	}
 }
 
-.affix-top .pt-page.pt-page-home {
-	//top: 280px;
-	position: relative;
-	//margin-bottom: 280px;
-
-	@include respond-to(md-only) {
-		//top: 0px;
-		//margin-bottom: 0px;
-	}
-}
-.affix-top .navbar-collapse {
-	-webkit-animation-name: slideInDown;
-	animation-name: slideInDown;
-}
 .navbar ul.navbar-nav {
 	list-style: none;
 	text-align: center;
@@ -45,12 +32,18 @@
 	display: inline-block;
 	height: 280px;
 	//transition: height 1s;
+	margin: 0px;
 
 	@include respond-to(md-only) {
 		height: 200px;
 	}
 	@include respond-to(handhelds) {
-		padding: 100px 0 0 40px;
+		padding: 20px auto 0 auto !important;
+		height: 100% !important;
+	}
+	@include respond-to(oldschool) {
+		padding: 10px auto 0 auto !important;
+		height: 100% !important;
 	}
  }
 
@@ -63,7 +56,14 @@
 	margin: 0 5% 0 0;
 
 	@include respond-to(handhelds) {
-		margin: 0 2% 0 2%;
+		float: none;
+		display: block;
+		margin: 0 0 0 0;
+	}
+	@include respond-to(oldschool) {
+		float: none;
+		display: block;
+		margin: 0 0 0 0;
 	}
 }
 
@@ -119,6 +119,7 @@
 .navbar-toggle {
 	z-index: 2000;
 	margin-top: 16px;
+	border: none;
 }
 .navbar-brand {
 	width: 60px !important;
@@ -129,19 +130,27 @@
 }
 .navbar-collapse {
 	box-shadow: none !important;
-	background: #3e2e19;
+	background: rgba(62, 46, 25, 0);
 	position: relative;
 
+	@include respond-to(oldschool) {
+		background: rgba(62, 46, 25, 1);
+	}
 	@include respond-to(handhelds) {
 		padding: 64px 0;
 		top: -70px;
 		height: 100vh;
+		background: rgba(62, 46, 25, 1);
 	}
 	@include respond-to(medium-screens) {
 		padding: 64px 0;
 		top: -70px;
 		height: 100vh;
 	}
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
 }
 
 .navbar ul.navbar-nav li a:hover,
@@ -153,6 +162,22 @@
 }
 
 // nach dem scrollen
+
+.affix-top .pt-page.pt-page-home {
+	//top: 280px;
+	position: relative;
+	//margin-bottom: 280px;
+
+	@include respond-to(md-only) {
+		//top: 0px;
+		//margin-bottom: 0px;
+	}
+}
+.affix-top .navbar-collapse {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	background: rgba(62, 46, 25, 1);
+}
 
 .navbar.affix-top {
 	position: fixed;
@@ -264,4 +289,8 @@
 
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: transparent !important;	
 }

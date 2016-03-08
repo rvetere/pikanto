@@ -41,6 +41,15 @@
     }
 }
 
+.owl-item.active {
+	@include respond-to(oldschool) {
+        padding: 0 40px 0 0;
+    }
+	@include respond-to(handhelds) {
+		padding: 0px;
+	}
+}
+
 .owl-theme {
     padding: 0px 20px 20px 20px;
     width: 1170px !important;
@@ -97,4 +106,8 @@
     @include respond-to(oldschool) {
         height: 165px;
     }
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background: #584122;	
 }

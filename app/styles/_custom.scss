@@ -54,6 +54,16 @@ a {
     }
 }
 
+.row {
+	@include respond-to(handhelds) {
+        margin: 0px;
+    }
+
+    @include respond-to(oldschool) {
+        margin: 0px;
+    }	
+}
+
 a:hover {
     color: #fff;
 	opacity: 0.6;
@@ -81,11 +91,9 @@ div.info-text {
         display: none;
     }
 
-
     @include respond-to(handhelds) {
         display: none;
     }
-
 
     @include respond-to(oldschool) {
         display: none;
@@ -221,6 +229,14 @@ div.info-text span {
     font-size: 16px;
     text-align: left;
     padding: 0 0 0 2%;
+	
+	@include respond-to(handhelds) {
+        font-size: 16px;
+    }
+
+    @include respond-to(oldschool) {
+        font-size: 14px;
+    }
 }
 
 .googledocs table td {
@@ -266,6 +282,16 @@ div.info-text span {
 	}
 }
 
+.googledocs .table-2 table {
+	
+	@include respond-to(oldschool) {
+        margin: 20px 0 0 0;
+    }
+	@include respond-to(handhelds) {
+		margin: 20px 0 0 0;
+	}
+}
+
 /* ******************   a la carte */
 .googledocs.alacarte .google-doc {
 	min-height: 980px;
@@ -280,9 +306,25 @@ div.info-text span {
 	padding: 2px 0 5px 2px;
 }
 
+.googledocs.alacarte .table-one table td {
+	@include respond-to(oldschool) {
+        width: 25%;
+    }
+	@include respond-to(handhelds) {
+		width: 25%;
+	}
+}
+
 .googledocs.alacarte .table-one table td:first-child {
     width: 60%;
     text-align: left;
+	
+	@include respond-to(oldschool) {
+        width: 50%;
+    }
+	@include respond-to(handhelds) {
+		width: 50%;
+	}
 }
 
 .googledocs.alacarte .table-two table td {
@@ -402,9 +444,18 @@ div.info-text span {
 }
 
 .ueberuns {
-    color: #f9f8f3;
-	background-color: rgba(62,46,25,0.8);
-	padding: 20px 20px 0px 20px;
+    color: #fff;
+    background-color: rgba(62, 46, 25, 0.85);
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+	font-size: 16px;
+	
+	@include respond-to(oldschool) {
+        font-size: 14px;
+    }
+	@include respond-to(handhelds) {
+		font-size: 14px;
+	}
 }
 .ueberuns h1{
 	padding-top: 20px;

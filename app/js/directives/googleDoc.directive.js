@@ -44,25 +44,76 @@ angular.module('app').directive('googleDoc', function appVersion() {
 			// Gallerie
 			} else if ($attrs.type === 'gallerie') {
                 var _findNextSpan = function($p) {
-                    var $span = $p.next().find('span');
-                    if ($span.length === 0 || $span.html().length === 0) {
-                        return _findNextSpan($p.next());
-                    } else {
+                    var $span = $p.next().find('span'),
+                        $next = $p.next();
+                    if (($span.length === 0 || $span.html().length === 0) && $next.length) {
+                        return _findNextSpan($next);
+                    } else if ($span.length !== 0 && $span.html().length !== 0) {
                         return $span;
+                    } else if (!$next.length) {
+                        return [];
                     }
                 };
 
-				var render = '';
+                var id = new Date().getTime();
+
+				var render = '<div id="gallery-' + id + '" class="owl-carousel owl-theme"><div>',
+                    imgCount = 0;
 				$build.find('p > span').each(function(i, el){
+                    if (imgCount > 0 && imgCount % 6 === 0) {
+                        render += '</div><div>';
+                    }
+
 					var galleryimg = $(el).find('img');
 					if (galleryimg.length > 0) {
 						var gallerytxt = _findNextSpan($(el).parent());
-						if (gallerytxt.html().length > 0) {
-							render += '<div class="gallerie-img">' + galleryimg.parent().html() + '</div><div class="gallerie-txt">' + gallerytxt.html() + '</div>';
-						}
+						if (gallerytxt.length && gallerytxt.html().length > 0 && gallerytxt.find('img').length === 0) {
+							render += '<div class="gallerie-img">' +
+                                '<div class="wrapper">' +
+                                galleryimg.parent().html() +
+                                '</div>' +
+                                '<div class="gallerie-txt">' + gallerytxt.html() + '</div>' +
+                                '</div>';
+
+						} else {
+                            render += '<div class="gallerie-img">' +
+                                '<div class="wrapper">' +
+                                galleryimg.parent().html() +
+                                '</div>' +
+                                '</div>';
+                        }
+                        imgCount++;
 					}
 				});
-                $('.google-doc', $element).html(render);
+                render += '</div>';
+
+                $('.google-doc', $element)
+                    .addClass('gallerie')
+                    .html(render);
+
+                $('#gallery-' + id).owlCarousel({
+                    loop: false,
+                    pagination : true,
+                    paginationNumbers: true,
+                    responsiveClass: true,
+                    scrollPerPage : true,
+                    navText: ['<i class="icon-angle-left"></i>', '<i class="icon-angle-right"></i>'],
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false
+                        },
+                        500: {
+                            items: 1,
+                            nav: true
+                        },
+                        1025: {
+                            items: 1,
+                            nav: true
+                        }
+                    }
+                });
+
 			// a la carte
             } else if ($attrs.type === 'alacarte-menu') {
                 var table1 = $build.find('table:eq(0)'),

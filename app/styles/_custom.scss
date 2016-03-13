@@ -389,11 +389,12 @@ div.info-text span {
 }
 
 /* ******************   galerie */
-.googledocs.galerie .google-doc p {
+.googledocs.gallerie .gallerie-img {
     width: 30%;
     margin: 0 1.5% 3% 1.5%;
     float: left;
     overflow: hidden;
+    position: relative;
 	
 	@include respond-to(medium-screens) {
         width: 47%;
@@ -402,23 +403,49 @@ div.info-text span {
 		width: 100%;
 		margin: 0 0 3% 0;
 	}
+
+    .gallerie-txt {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    &:hover {
+        .gallerie-txt {
+            opacity: 1;
+        }
+    }
 }
 
-.googledocs.galerie .google-doc p span {
-    display: inherit !important;
-    width: 100%;
-    height: 100%;
+.googledocs.gallerie .gallerie-img .wrapper {
     overflow: hidden;
+    display: inline-block;
+    margin: 0 0 0 -12%;
+    transform: rotate(0.00rad) translateZ(0px);
+    -webkit-transform: rotate(0.00rad) translateZ(0px);
+    width: 450px;
+    height: 300px;
 }
 
-.googledocs.galerie .google-doc p span img {
+.googledocs.gallerie .gallerie-img .wrapper img {
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
     transition: filter 1s;
     -webkit-transition: all .6s ease;
+
+    width: 100% !important;
+    height: auto !important;
 }
 
-.googledocs.galerie .google-doc p span img:hover {
+.googledocs.gallerie .gallerie-img .wrapper img:hover {
     -webkit-filter: none;
     filter: none;
 }
@@ -528,4 +555,12 @@ div.info-text span {
 .contact-more {
 	margin: 0 0 12px 0;
 	font-size: 16px;
+}
+
+.modal .modal-dialog .modal-content {
+    width: 992px !important;
+}
+.modal-header .close {
+    margin-top: -8px;
+    font-size: 32px;
 }

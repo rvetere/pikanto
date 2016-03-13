@@ -57,13 +57,9 @@ angular.module('app').directive('googleDoc', function appVersion() {
 
                 var id = new Date().getTime();
 
-				var render = '<div id="gallery-' + id + '" class="owl-carousel owl-theme"><div>',
+				var render = '<div id="gallery-' + id + '" class="owl-carousel owl-theme">',
                     imgCount = 0;
 				$build.find('p > span').each(function(i, el){
-                    if (imgCount > 0 && imgCount % 6 === 0) {
-                        render += '</div><div>';
-                    }
-
 					var galleryimg = $(el).find('img');
 					if (galleryimg.length > 0) {
 						var gallerytxt = _findNextSpan($(el).parent());
@@ -85,7 +81,6 @@ angular.module('app').directive('googleDoc', function appVersion() {
                         imgCount++;
 					}
 				});
-                render += '</div>';
 
                 $('.google-doc', $element)
                     .addClass('gallerie')
@@ -101,14 +96,14 @@ angular.module('app').directive('googleDoc', function appVersion() {
                     responsive: {
                         0: {
                             items: 1,
-                            nav: false
+                            nav: true
                         },
                         500: {
                             items: 1,
                             nav: true
                         },
                         1025: {
-                            items: 1,
+                            items: 3,
                             nav: true
                         }
                     }
@@ -140,7 +135,7 @@ angular.module('app').directive('googleDoc', function appVersion() {
                     responsive: {
                         0: {
                             items: 1,
-                            nav: false
+                            nav: true
                         },
                         500: {
                             items: 1,

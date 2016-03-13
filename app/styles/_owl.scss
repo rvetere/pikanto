@@ -78,12 +78,10 @@
 
 
     @include respond-to(oldschool) {
-        padding: 16px 7px 16px 0px;
-        width: 303px !important;
+        padding: 0;
+        width: 250px !important;
         height: auto;
         margin: 21px auto;
-        left: 2px;
-        background-size: 250px;
     }
 }
 

@@ -57,7 +57,7 @@ angular.module('app').directive('googleDoc', function appVersion() {
 
                 var id = new Date().getTime();
 
-				var render = '<div id="gallery-' + id + '" class="owl-carousel owl-theme">',
+				var render = '<div>',
                     imgCount = 0;
 				$build.find('p > span').each(function(i, el){
 					var galleryimg = $(el).find('img');

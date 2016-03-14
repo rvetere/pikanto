@@ -19,11 +19,12 @@ a {
   .container {
     position: relative;
 	margin: 0 auto;
-	padding: 0 15px 80px 15px;
+	padding: 0 3% 4% 4%;
+	width: 100%;
 	
-	@include respond-to(medium-screens) { padding: 0 50px 40px 50px; margin: 0 auto; }
-	@include respond-to(handhelds) { padding: 0 30px 60px 30px; margin: 0 auto; }
-    @include respond-to(oldschool) { padding: 0 30px 40px 30px; margin: 0 auto; }
+	@include respond-to(medium-screens) { }
+	@include respond-to(handhelds) { }
+    @include respond-to(oldschool) { }
   }
   
   .container.small-space {

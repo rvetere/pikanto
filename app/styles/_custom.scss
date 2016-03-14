@@ -388,8 +388,8 @@ div.info-text span {
 
 /* ******************   galerie */
 .googledocs.gallerie .gallerie-img {
-    width: 100%;
-    margin: 0;
+    width: 32%;
+    margin: 0 1% 1% 0;
     float: left;
     overflow: hidden;
     position: relative;
@@ -406,31 +406,17 @@ div.info-text span {
     }
 
     .gallerie-txt {
-        position: absolute;
-        bottom: 5px;
         width: 100%;
         background: rgba(0, 0, 0, 0.5);
         color: white;
         padding: 12px;
-        opacity: 0;
-        transition: opacity 1s ease;
-    }
-
-    &:hover {
-        .gallerie-txt {
-            opacity: 1;
-        }
     }
 }
 
 .googledocs.gallerie .gallerie-img .wrapper {
-    overflow: hidden;
     display: inline-block;
-    margin: 0 0 0 -12%;
     transform: rotate(0.00rad) translateZ(0px);
     -webkit-transform: rotate(0.00rad) translateZ(0px);
-    width: 450px;
-    height: 300px;
 }
 
 .googledocs.gallerie .gallerie-img .wrapper img {

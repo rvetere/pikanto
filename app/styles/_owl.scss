@@ -39,7 +39,16 @@
     .owl-nav .owl-next {
         right: -60px;
     }
+
 }
+
+.alacarte .owl-carousel.owl-theme .owl-nav .owl-prev {
+        left: -40px;
+    }
+
+.alacarte .owl-carousel.owl-theme .owl-nav .owl-next {
+        right: -10px;
+    }
 
 .owl-item.active {
 	@include respond-to(oldschool) {

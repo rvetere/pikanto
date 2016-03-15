@@ -10,7 +10,7 @@ $hover-width:               230px;
 ul.pt-page-nav {
   position: absolute;
   z-index: 2000;
-  top: 50%;
+  top: 52%;
   transform: translateY(-50%);
   right: 0;
   list-style: none;
@@ -33,7 +33,7 @@ ul.pt-page-nav {
 	margin: 30px 0;
     width: 90px;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(197, 30, 71, 1);
 	}
 
     a {
@@ -198,8 +198,8 @@ ul.pt-page-nav {
 
 
 ul.pt-page-nav li a {
-  background-color: #ffffff;
-  background-image: -webkit-linear-gradient(left, #34c9cb 0%, #34c9cb 50%, transparent 50%);
+  background-color: rgb(74, 80, 82);
+  background-image: -webkit-linear-gradient(left, #C51E47 0%, #C51E47 50%, transparent 50%); /* green 34c9cb */
   background-position: 100% 0;
   background-size: 200% 200%;
   color: transparent;
@@ -246,7 +246,7 @@ ul.pt-page-nav li.nav-social a {
 	font-size: 1em;
 	font-family: 'Oswald', sans-serif;
 	text-decoration: none;
-	color: rgba(255, 255, 255, .4);
+	color: (197, 30, 71, 0.4);
 	
 	@include respond-to(handhelds) { font-size: 1.2em; }
     @include respond-to(oldschool) { font-size: 1.2em; }
@@ -254,22 +254,26 @@ ul.pt-page-nav li.nav-social a {
 
 .pt-page-nav-wrap div.nav-impressum a:hover {
 	text-decoration: none;
-	color: rgba(255, 255, 255, 1);
+	color: #C51E47;
 }
 
-
 .pt-page-nav-wrap {
-  position: fixed;
-  left: 10%;
-  top: 0;
-  height: 100%;
-  width: $nav-width + 20;
-  z-index: 2000;
-  display: none;
+	position: fixed;
+	left: -400px;
+	top: 0;
+	height: calc(100% - 80px);
+	width: $nav-width + 20;
+	z-index: 2000;
+	-webkit-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.pt-hover .pt-page-nav-wrap {
+	left: 70px;
 }
 
 .navbar-header:before {
-  content: '';
+  /*content: '';
   display: block;
   width: 0;
   height: 100%;
@@ -279,12 +283,12 @@ ul.pt-page-nav li.nav-social a {
   transition: opacity 0.6s ease;
   opacity: 0;
   top: 0;
-  right: 0;
+  right: 0;*/
 }
 .pt-hover .navbar-header:before {
-  width: 100%;
+  /*width: 100%;
   z-index: 1999;
-  opacity: 1;
+  opacity: 1;*/
 }
 
 .pt-hover {
@@ -309,45 +313,79 @@ ul.pt-page-nav li.nav-social a {
 
 }
 
-.affix-top {
+/*.affix-top {
   #nav-toggle {
     &:before {
       border-color: #34c9cb;
     }
   }
+}*/
 
-  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
-    background: #34c9cb;
-  }
+.navbar-default {
+	border-color: transparent;
+    border-right: 1px solid rgba(78, 90, 94, 0.2);
+    background-color: rgba(255,255,255,1);
+    position: fixed;
+    min-height: 100%;
+    width: 90px;
+	-webkit-transition: width 1s;
+    transition: width 1s;
+}
+
+.navbar-default .nav-title {
+	transform: rotate(-90deg);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -13px;
+	color: #4E5A5E;
+    font-size: 1.1em;
+	letter-spacing: 1px;
+    /*text-transform: uppercase;*/
+}
+
+.pt-hover .navbar-default .nav-title {
+	display: none;
+}
+
+.pt-hover .navbar-default {
+    width: 360px;
 }
 
 // animate burger
 #nav-toggle {
-  cursor: pointer;
-  position: relative;
-  z-index: 3000;
-  height: 20px;
-  width: 20px;
-  float: left;
-  margin: 45px 0 0 30px;
+  	cursor: pointer;
+	position: absolute;
+	z-index: 3000;
+	height: 20px;
+	width: 100%;
+	float: left;
+	padding: 40px 54px 41px 35px;
+	bottom: 0;
+	border-top: 1px solid rgba(78,90,94,0.2);
+	background-color: rgba(0,0,0,0);
   
   @include respond-to(medium-screens) {
-		margin: 45px 0 0 30px;
+		
 	}
 	@include respond-to(handhelds) {
-		margin: 40px 0 0 30px;
+		
 	}
 	@include respond-to(oldschool) {
-		margin: 40px 0 0 30px;
+		
 	}
 }
+#nav-toggle:hover {
+    background-color: rgba(0,0,0,0.02);
+  }
 
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
   border-radius: 2px;
   height: 2px;
   width: 18px;
-  background: #fff;
+  background: #4E5A5E;
   position: absolute;
   display: block;
   content: '';
@@ -360,7 +398,7 @@ ul.pt-page-nav li.nav-social a {
 #nav-toggle:hover span,
 #nav-toggle:hover span:before,
 #nav-toggle:hover span:after {
-  background: #4E5A5E;
+  background: #C51E47;
 }
 
 #nav-toggle span:before {

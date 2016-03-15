@@ -30,10 +30,12 @@ body, html {
 }
 
 body {
-	font-family: 'Raleway', Calibri, Arial, sans-serif;
+	/*font-family: 'Raleway', Calibri, Arial, sans-serif;*/
+	font-family: 'Roboto Condensed', sans-serif;
 	color: #4E5A5E;
 	background-color: #FAFAFA;
 	font-weight: 300;
+	font-size: 14px;
 
 	/*@include gradient-horizontal-ff(#0a0a0a, #2a2a2a, 0%, 100%);*/
 }
@@ -83,33 +85,54 @@ a:hover {
 	}
 
 	.navbar-brand {
-
+		padding: 0;
+		margin: 55px 0 0 35px;
+		width: 328px;
+		color: #C51E47;
+		font-family: 'Oswald', sans-serif;
+		font-size: 2em;
+		font-weight: 400;
+		line-height: 1em;
+		overflow: hidden;
+		display: inline-block;
+		
 		svg {
 			display: block;
 			width: 200px;
 			height: 58px;
 			transition: all .8s ease;
 
-			.st0{ fill: #fff; }
+			.st0{ fill: #4E5A5E; }
 		}
 		span {
-			color: #fff;
-			font-family: 'Raleway', sans-serif;
-			font-weight: 100;
-			font-size: .7em;
-			font-style: italic;
-			position: relative;
-			top: -18px;
-			left: 14px;
+			box-sizing: border-box;
+			-webkit-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
+			cursor: pointer;
+			letter-spacing: 0;
+			-webkit-transition: all 0.2s 0s linear;
+			transition: all 0.2s 0s linear;
 		}
-		padding: 0;
-		margin: 29px 0 0 32px;
-		width: 200px;
-		height: 58px;
-		text-indent: -10000px;
+		
+		span.fullname {
+    		-webkit-transition: max-width 0.3s 0.2s cubic-bezier(0, 0, 0, 1);
+    		transition: max-width 0.3s 0.2s cubic-bezier(0, 0, 0, 1);
+			display: inline-block;
+			max-width: 0;
+		}
+		span.fullname i {
+			opacity: 0;
+			font-style: normal;
+			letter-spacing: 0;
+			transform: translate(0, -5px);
+		}
+	}
+	.navbar-brand:hover {
+		color: #C51E47;	
 	}
 
-	&.affix-top {
+	/*&.affix-top {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -148,13 +171,75 @@ a:hover {
 			background-size: 150px 43.5px;
 			background-position: 150px 30px;
 		}
-	}
+	}*/
+}
+
+.navbar-brand span.fullname i:nth-of-type(6) {
+	-webkit-transition: all 0.2s 0.05s linear;
+	transition: all 0.2s 0.05s linear;
+}
+.navbar-brand span.fullname i:nth-of-type(5) {
+	-webkit-transition: all 0.2s 0.1s linear;
+	transition: all 0.2s 0.1s linear;
+}
+.navbar-brand span.fullname i:nth-of-type(4) {
+	-webkit-transition: all 0.2s 0.15s linear;
+	transition: all 0.2s 0.15s linear;
+}
+.navbar-brand span.fullname i:nth-of-type(3) {
+	-webkit-transition: all 0.2s 0.2s linear;
+	transition: all 0.2s 0.2s linear;
+}
+.navbar-brand span.fullname i:nth-of-type(2) {
+	-webkit-transition: all 0.2s 0.25s linear;
+	transition: all 0.2s 0.25s linear;
+}
+.navbar-brand span.fullname i:nth-of-type(1) {
+	-webkit-transition: all 0.2s 0.3s linear;
+	transition: all 0.2s 0.3s linear;
+}
+
+.pt-hover .navbar-brand span.fullname i:nth-of-type(1) {
+	-webkit-transition: all 0.2s 0.05s linear;
+	transition: all 0.2s 0.05s linear;
+}
+.pt-hover .navbar-brand span.fullname i:nth-of-type(2) {
+	-webkit-transition: all 0.2s 0.1s linear;
+	transition: all 0.2s 0.1s linear;
+}
+.pt-hover .navbar-brand span.fullname i:nth-of-type(3) {
+	-webkit-transition: all 0.2s 0.15s linear;
+	transition: all 0.2s 0.15s linear;
+}
+.pt-hover .navbar-brand span.fullname i:nth-of-type(4) {
+	-webkit-transition: all 0.2s 0.2s linear;
+	transition: all 0.2s 0.2s linear;
+}
+.pt-hover .navbar-brand span.fullname i:nth-of-type(5) {
+	-webkit-transition: all 0.2s 0.25s linear;
+	transition: all 0.2s 0.25s linear;
+}
+.pt-hover .navbar-brand span.fullname i:nth-of-type(6) {
+	-webkit-transition: all 0.2s 0.3s linear;
+	transition: all 0.2s 0.3s linear;
+}
+
+.pt-hover .navbar-header .navbar-brand span.fullname {
+	max-width: 100px;
+}
+
+.pt-hover .navbar-header .navbar-brand span.fullname i{
+	opacity: 1;
 }
 
 .pt-nav {
 	float: right;
 	padding: 46px 60px 30px 0;
 	height: 100px;
+}
+
+.pt-main {
+	margin-left: 90px;
 }
 
 div.info-text {
@@ -317,7 +402,7 @@ div.info-text span {
 	@include respond-to(oldschool) {
 		width: 100%;
 		margin: 0;
-	  float: none;
+	  	float: none;
 	}
 }
 
@@ -332,6 +417,10 @@ div.info-text span {
 
 .wellcome.touch div a.mail:hover {
 	color: #fff;
+}
+
+.pt-page {
+	padding: 0 0 0 90px;
 }
 
 .pt-page.pt-page-contact a:hover {

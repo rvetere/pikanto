@@ -169,6 +169,40 @@ div.info-text span {
     background-position: center top;
 }
 
+.pt-page-home .news{
+    background-image: none;
+	background-color: rgba(62, 46, 25, 0.85);
+    position: absolute;
+	top: 25%;
+	left: 10%;
+    padding: 14px 24px;
+	color: #fff;
+	width: 250px;
+	
+    @include respond-to(handhelds) {
+        top: 55%;
+		left: 50%;
+		margin-left: -125px;
+    }
+    @include respond-to(oldschool) {
+        top: 55%;
+		left: 50%;
+		margin-left: -125px;
+    }
+}
+
+.pt-page-home .news h1{
+    font-size: 1em;
+    font-style: italic;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    margin-top: 10px;
+    padding-bottom: 3px;
+}
+
+.pt-page-home .news h2{
+    font-size: 1.4em;
+}
+
 .googledocs {}
 
 .googledocs h1, .ueberuns h1 {

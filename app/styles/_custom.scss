@@ -191,7 +191,7 @@ div.info-text span {
     }
 }
 
-.pt-page-home .news h1{
+.pt-page-home p:first-child, .pt-page-home h1 {
     font-size: 1em;
     font-style: italic;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);

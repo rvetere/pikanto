@@ -112,17 +112,12 @@ angular.module('app').directive('googleDoc', function appVersion() {
 			// news
             } else if ($attrs.type === 'news') {
                 var firstMatch = null;
-                $build.find('p > span').each(function(i, el){
-                    if ($(el).html() !== '') {
-                        firstMatch = el;
-                        return false;
-                    }
-                });
-                if (firstMatch) {
+                if ($build.text() !== '') {
                     $('.google-doc', $element)
                         .addClass('news')
-                        .html($(firstMatch).html());
+                        .html($build.html());
                 }
+                
 			// a la carte
             } else if ($attrs.type === 'alacarte-menu') {
                 var table1 = $build.find('table:eq(0)'),

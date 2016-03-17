@@ -242,6 +242,7 @@ a:hover {
 
 .pt-main {
 	margin-left: 90px;
+	height: 100%;
 }
 
 div.info-text {
@@ -453,4 +454,15 @@ textarea.ng-invalid.ng-touched {
 input.ng-valid.ng-touched,
 textarea.ng-valid.ng-touched {
 	background-color: #1299d0;
+}
+
+/* ________________ WORK */
+.pt-page .row.work-header {
+    height: 100%;
+	width: 100%;
+    background-image: url("http://www.masha-sedgwick.com/wp-content/uploads/2016/02/ck2-masha-valentina-4.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+	display: block;
+	margin: 0 0 80px 0;
 }

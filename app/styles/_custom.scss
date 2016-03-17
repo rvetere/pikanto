@@ -240,6 +240,10 @@ a:hover {
 	height: 100px;
 }
 
+#pt-main {
+	height: 100%;
+}
+
 .pt-main {
 	margin-left: 90px;
 	height: 100%;
@@ -457,12 +461,112 @@ textarea.ng-valid.ng-touched {
 }
 
 /* ________________ WORK */
+.pt-page-work {
+    height: 100%;
+}
+
 .pt-page .row.work-header {
     height: 100%;
 	width: 100%;
-    background-image: url("http://www.masha-sedgwick.com/wp-content/uploads/2016/02/ck2-masha-valentina-4.jpg");
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 30% 50%;
 	display: block;
+	position: relative;
+}
+
+.pt-page .row.work-info {
+	width: 100%;
+    background-color: #952022;
+	padding: 36px 0;
+	color: #fff;
 	margin: 0 0 80px 0;
+}
+
+.pt-page .row.work-info h2 {
+    text-align: center;
+	font-size: 1em;
+	margin: 36px 0 36px 0;
+}
+
+.pt-page .row.work-info p {
+    font-size: 3em;
+    line-height: 1.1em;
+    text-align: center;
+	margin: 0 auto 36px auto;
+	width: 70%;
+}
+
+.pt-page .row.work-facts {
+    background-color: #952022;
+	color: #fff;
+	padding: 36px 0 18px 0;
+}
+
+.pt-page .row.work-facts .col-md-12 {
+    margin: 0 auto;
+    width: 60%;
+    float: none;
+    display: block;
+}
+
+.pt-page .row.work-facts .col-md-12 div {
+}
+
+.pt-page .row.work-facts .col-md-12 div h3 {
+	font-size: 1em;
+	float: left;
+	width: 20%;
+	margin: 4px 0 0 0;
+}
+
+.pt-page .row.work-facts .col-md-12 div p {
+	float: left;
+	width: 80%;
+	margin: 0;
+	line-height: 1.5em;
+	margin: 0 0 18px 0;
+}
+
+.pt-page .row.work-facts .col-md-12 div p span{
+	padding: 0 12px;
+	font-weight: bold;
+}
+
+.pt-page .row.work-facts .col-md-12 hr {
+	border: none;
+	height: 1px;
+	clear: both;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 0 0 18px 0;
+}
+
+.pt-page .row.work-pictures {
+	width: 700px;
+    margin: 0 auto 80px auto;
+}
+
+.pt-page .row.work-pictures .browser {
+	height: 550px;
+	width: 700px;
+	overflow: hidden;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.1);
+	position: relative;
+}
+
+.pt-page .row.work-pictures .browser .browser-top {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+}
+
+.pt-page .row.work-pictures .browser .browser-content {
+	height: 100%;
+	position: absolute;
+	top: 110px;
+	transition: 14s all ease;
+}
+
+.pt-page .row.work-pictures .browser .browser-content:hover {
+	transform: translateY(-1308px);
 }

@@ -605,3 +605,7 @@ div.info-text span {
     margin-top: -8px;
     font-size: 32px;
 }
+
+.modal-wrapper {
+    z-index: 2050 !important;
+}

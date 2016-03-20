@@ -429,14 +429,14 @@ div.info-text span {
     position: relative;
 
 	@include respond-to(medium-screens) {
-        width: 47%;
+        width: 90%;
     }
 	@include respond-to(handhelds) {
 		width: 100%;
 		margin: 0 0 3% 0;
 	}
     @include respond-to(oldschool) {
-        width: 80%;
+        width: 100%;
     }
 
     .gallerie-txt {

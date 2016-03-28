@@ -58,6 +58,14 @@ a:hover {
 	height: 100%;
 }
 
+.pt-page p {
+   	width: 100% !important;		
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	padding: 0;	
+}
+
 .navbar-nav {
 	display: none;
 }
@@ -466,6 +474,33 @@ textarea.ng-valid.ng-touched {
 	color: #333;
 }
 
+.pt-page.pt-page-work h1 {
+	border: none;
+    font-size: 3em;
+    padding: 0;
+	line-height: 1em;
+}
+
+.pt-page.pt-page-work h1 span{
+    font-size: 0.5em;
+    color: #952022;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1em;
+	display: block;
+	opacity: 1;
+}
+
+.pt-page.pt-page-work h2 {
+    font-size: 1em;
+	text-transform: uppercase;
+	margin: 0 0 1em 0;
+}
+
+.pt-page.pt-page-work p {
+	font-size: 1.2em;
+}
+
+/* HEADER */
 .pt-page .row.work-header {
     height: 100%;
 	width: 100%;
@@ -475,43 +510,7 @@ textarea.ng-valid.ng-touched {
 	position: relative;
 }
 
-.pt-page .row.work-about {
-    background-position: top right;
-	display: block;
-	position: relative;
-	background-image: url(../../images/steakhouse-about.jpg);
-	background-repeat: no-repeat;
-	margin: 0 0 0 0;
-	padding: 0 0 250px 0;
-}
-
-.pt-page .row.work-about h1 {
-	border: none;
-    font-size: 6em;
-    padding: 170px 0 0 0;
-}
-
-.pt-page .row.work-about h2 {
-    font-size: 1em;
-	text-transform: uppercase;
-}
-
-.pt-page .row.work-about p {
-	margin: 0 0 2em 0;
-	width: 100%;
-	font-size: 1.5em;
-}
-
-.pt-page .row.work-about a {
-	background-color: #952022;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 700;
-}
-
-.pt-page .row.work-about a {
-    background-image: -webkit-linear-gradient(left, #333 0%, #333 50%, transparent 50%);
-}
-
+/* INFO */
 .pt-page .row.work-info {
 	width: 100%;
     background-color: #952022;
@@ -523,31 +522,70 @@ textarea.ng-valid.ng-touched {
 .pt-page .row.work-info h2 {
     text-align: center;
 	font-size: 1em;
-	margin: 36px 0 36px 0;
+	margin: 36px 0 1em 0;
 }
 
 .pt-page .row.work-info p {
-    font-size: 3em;
+    font-size: 2.4em;
     line-height: 1.1em;
     text-align: center;
 	margin: 0 auto 36px auto;
 	width: 70%;
 }
 
+/* ABOUT */
+.pt-page .row.work-about {
+    background-position: top right;
+	display: block;
+	position: relative;
+	background-image: url(../../images/steakhouse-about.jpg);
+	background-repeat: no-repeat;
+	margin: 0 0 0 0;
+	padding: 0 0 160px 0;
+}
+
+.pt-page .row.work-about h1 {
+	border: none;
+    font-size: 6em;
+    padding: 170px 0 0 0;
+	line-height: 2em;
+}
+
+.pt-page .row.work-about p {
+	margin: 0 0 2em 0;
+	width: 100%;
+	font-size: 1.2em;
+}
+
+.pt-page .row.work-about a {
+	background-color: #952022;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 700;
+}
+
+.pt-page .row.work-about a:hover {
+    background-image: -webkit-linear-gradient(left, #333 0%, #333 50%, transparent 50%);
+}
+
+/* FACTS */
 .pt-page .row.work-facts {
-    background-color: #952022;
-	color: #fff;
-	padding: 36px 0 18px 0;
+    background-color: #E8E8E8;
+	color: #333;
+	padding: 36px 0 36px 0;
+	text-align: center;
+	margin: 0 0 80px 0;
 }
 
 .pt-page .row.work-facts .col-md-12 {
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
     float: none;
     display: block;
+	padding: 20px 0 20px 0;
 }
 
 .pt-page .row.work-facts .col-md-12 div {
+	display: inline-block;
 }
 
 .pt-page .row.work-facts .col-md-12 div h3 {
@@ -562,7 +600,7 @@ textarea.ng-valid.ng-touched {
 	width: 80%;
 	margin: 0;
 	line-height: 1.5em;
-	margin: 0 0 18px 0;
+	margin: 0;
 }
 
 .pt-page .row.work-facts .col-md-12 div p span{
@@ -574,12 +612,13 @@ textarea.ng-valid.ng-touched {
 	border: none;
 	height: 1px;
 	clear: both;
-	background-color: rgba(255, 255, 255, 0.2);
-	margin: 0 0 18px 0;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin: 24px 0;
 }
 
+/* PICTURES */
 .pt-page .row.work-pictures {
-    margin: -100px auto 0px auto;
+    margin: 0 auto 0px auto;
 }
 
 .pt-page .row.work-pictures .col-md-4 {
@@ -589,7 +628,7 @@ textarea.ng-valid.ng-touched {
 }
 
 .pt-page .row.work-pictures .col-md-6 {
-    padding: 10% 10% 5% 10%;
+    padding: 10%;
 }
 
 .pt-page .row.work-pictures .col-md-6 img {
@@ -602,33 +641,25 @@ textarea.ng-valid.ng-touched {
 	margin: 80px 0 0 0;
 }
 
-/*.pt-page .row.work-pictures {
-	width: 700px;
-    margin: 0 auto 80px auto;
+/* TO TOP */
+.pt-page .row.work-totop {
+    text-align: center;
+	background-color: #952022;
+    padding: 36px 0;
 }
 
-.pt-page .row.work-pictures .browser {
-	height: 550px;
-	width: 700px;
-	overflow: hidden;
-	border-radius: 3px;
-	border: 1px solid rgba(0,0,0,0.1);
-	position: relative;
+.pt-page .row.work-totop a {
+	background-color: #fff;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 700;
+	padding: 8px 0 0 0;
 }
 
-.pt-page .row.work-pictures .browser .browser-top {
-	position: absolute;
-	top: 0;
-	z-index: 9;
+.pt-page .row.work-totop a:hover {
+    background-image: -webkit-linear-gradient(left, #333 0%, #333 50%, transparent 50%);
 }
 
-.pt-page .row.work-pictures .browser .browser-content {
-	height: 100%;
-	position: absolute;
-	top: 110px;
-	transition: 14s all ease;
+.pt-page .row.work-totop i{
+	font-size: 1.2em;
+	color: #fff;
 }
-
-.pt-page .row.work-pictures .browser .browser-content:hover {
-	transform: translateY(-1308px);
-}*/

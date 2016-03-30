@@ -470,7 +470,9 @@ textarea.ng-valid.ng-touched {
 }
 
 
-
+.pt-page .col-md-12, .pt-page .col-md-6 {
+    padding: 6% 12%;
+}
 
 
 
@@ -683,30 +685,6 @@ textarea.ng-valid.ng-touched {
 }
 
 
-/* TO TOP */
-.pt-page .row.about-totop {
-    text-align: center;
-	background-color: #C51E47;
-    padding: 36px 0;
-}
-
-.pt-page .row.about-totop a {
-	background-color: #fff;
-	font-weight: 300;
-	padding: 8px 0 0 0;
-}
-
-.pt-page .row.about-totop a:hover {
-    background-image: -webkit-linear-gradient(left, #333 0%, #333 50%, transparent 50%);
-}
-
-.pt-page .row.about-totop i{
-	font-size: 1.2em;
-	color: #fff;
-}
-
-
-
 
 
 
@@ -757,7 +735,6 @@ textarea.ng-valid.ng-touched {
 .pt-page .row.work-info {
 	width: 100%;
     background-color: #952022;
-	padding: 36px 0;
 	color: #fff;
 	margin: 0 0 0 0;
 }
@@ -765,14 +742,14 @@ textarea.ng-valid.ng-touched {
 .pt-page .row.work-info h2 {
     text-align: center;
 	font-size: 1em;
-	margin: 36px 0 1em 0;
+	margin: 0 0 1em 0;
 }
 
 .pt-page .row.work-info p {
     font-size: 2.4em;
     line-height: 1.1em;
     text-align: center;
-	margin: 0 auto 36px auto;
+	margin: 0 auto !important;
 	width: 70%;
 }
 
@@ -784,14 +761,18 @@ textarea.ng-valid.ng-touched {
 	background-image: url(../../images/steakhouse-about.jpg);
 	background-repeat: no-repeat;
 	margin: 0 0 0 0;
-	padding: 0 0 160px 0;
+	padding: 0 0 12% 0;
 	text-align: justify;
+}
+
+.pt-page .row.work-about .col-md-12 {
+	padding: 6% 0;
 }
 
 .pt-page .row.work-about h1 {
 	border: none;
     font-size: 6em;
-    padding: 170px 0 0 0;
+    padding: 12% 0 0 0;
 	line-height: 2em;
 }
 
@@ -818,17 +799,13 @@ textarea.ng-valid.ng-touched {
 .pt-page .row.work-facts {
     background-color: #E8E8E8;
 	color: #333;
-	padding: 36px 0 36px 0;
 	text-align: center;
-	margin: 0 0 80px 0;
 }
 
 .pt-page .row.work-facts .col-md-12 {
     margin: 0 auto;
-    width: 80%;
     float: none;
     display: block;
-	padding: 20px 0 20px 0;
 }
 
 .pt-page .row.work-facts .col-md-12 div {
@@ -847,7 +824,7 @@ textarea.ng-valid.ng-touched {
 	width: 80%;
 	margin: 0;
 	line-height: 1.5em;
-	margin: 0;
+	margin: 0 !important;
 }
 
 .pt-page .row.work-facts .col-md-12 div p span{
@@ -860,22 +837,12 @@ textarea.ng-valid.ng-touched {
 	height: 1px;
 	clear: both;
 	background-color: rgba(0, 0, 0, 0.2);
-	margin: 24px 0;
+	margin: 4% 0;
 }
 
 /* PICTURES */
 .pt-page .row.work-pictures {
     margin: 0 auto 0px auto;
-}
-
-.pt-page .row.work-pictures .col-md-4 {
-	padding: 280px 36px 36px 56px;
-	margin: 300px 0 0 0;
-	font-size: 1.5em;
-}
-
-.pt-page .row.work-pictures .col-md-6 {
-    padding: 10%;
 }
 
 .pt-page .row.work-pictures .col-md-6 img {
@@ -888,24 +855,37 @@ textarea.ng-valid.ng-touched {
 	margin: 80px 0 0 0;
 }
 
-/* TO TOP */
-.pt-page .row.work-totop {
+
+
+
+/* ________________ FOOTER */
+.pt-page .row.footer {
     text-align: center;
-	background-color: #952022;
-    padding: 36px 0;
 }
 
-.pt-page .row.work-totop a {
+.pt-page .row.footer h1 {
+	color: #fff;
+	margin: 0 0 6% 0;
+}
+
+.pt-page .row.footer p {
+	text-align: center;
+	margin: 0 0 0.8em 0 !important;
+}
+
+.pt-page .row.footer a {
 	background-color: #fff;
 	font-weight: 300;
-	padding: 8px 0 0 0;
+	padding: 0 12px 0 12px;
+	font-size: 1.4em;
 }
 
-.pt-page .row.work-totop a:hover {
+.pt-page .row.footer a:hover {
     background-image: -webkit-linear-gradient(left, #333 0%, #333 50%, transparent 50%);
 }
 
-.pt-page .row.work-totop i{
-	font-size: 1.2em;
-	color: #fff;
+.pt-page .row.footer span {
+	text-align: center;
+	font-size: 1em;
+	margin: 6% 0 6% 0 !important;
 }

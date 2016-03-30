@@ -585,6 +585,8 @@ textarea.ng-valid.ng-touched {
 .pt-page .row.about-contact h1 {
 	padding: 36px 0 36px 0;
 	line-height: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .pt-page .row.about-contact .col-md-8 {
@@ -866,6 +868,7 @@ textarea.ng-valid.ng-touched {
 .pt-page .row.footer h1 {
 	color: #fff;
 	margin: 0 0 6% 0;
+	letter-spacing: 1px;
 }
 
 .pt-page .row.footer p {

@@ -191,7 +191,7 @@ div.info-text span {
     }
 }
 
-.pt-page-home .news h1{
+.pt-page-home p:first-child, .pt-page-home h1 {
     font-size: 1em;
     font-style: italic;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -429,14 +429,14 @@ div.info-text span {
     position: relative;
 
 	@include respond-to(medium-screens) {
-        width: 47%;
+        width: 90%;
     }
 	@include respond-to(handhelds) {
 		width: 100%;
 		margin: 0 0 3% 0;
 	}
     @include respond-to(oldschool) {
-        width: 80%;
+        width: 100%;
     }
 
     .gallerie-txt {
@@ -604,4 +604,8 @@ div.info-text span {
 .modal-header .close {
     margin-top: -8px;
     font-size: 32px;
+}
+
+.modal-wrapper {
+    z-index: 2050 !important;
 }

@@ -2,8 +2,10 @@ angular.module('app').controller('ModalCtrl', function ModalCtrl() {
 	$('body').removeClass('pt-hover');
 
 	if ($('#disqus_thread').html() === '') {
-		var disqus_config = function () {
-			this.language = "de";
+		window.disqus_config = function () {
+			this.language = 'de';
+			this.page.url = 'http://frieden-illnau.ch/restaurant-frieden-illnau-gaestebuch.html';
+			this.page.title = 'Restaurant Frieden Illnau';
 		};
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 		var disqus_shortname = 'frieden-illnau'; // required: replace example with your forum shortname

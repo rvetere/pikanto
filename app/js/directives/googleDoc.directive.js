@@ -7,7 +7,7 @@ angular.module('app').directive('googleDoc', function appVersion() {
 
     function link($scope, $element, $attrs) {
         var proxyUrl = location.href.indexOf('localhost') > -1 ? 'http://localhost/' : '/',
-            url = proxyUrl + 'app/assets/curlProxy.php?url=' + $attrs.url;
+            url = proxyUrl + 'curlProxy.php?url=' + $attrs.url;
 
         var request = $.ajax({
             url: url,
@@ -96,11 +96,13 @@ angular.module('app').directive('googleDoc', function appVersion() {
                     responsive: {
                         0: {
                             items: 1,
-                            nav: true
+                            nav: false,
+                            dots: false
                         },
-                        500: {
-                            items: 1,
-                            nav: true
+                        768: {
+                            items: 2,
+                            nav: false,
+                            dots: false
                         },
                         1025: {
                             items: 3,
@@ -144,9 +146,9 @@ angular.module('app').directive('googleDoc', function appVersion() {
                     responsive: {
                         0: {
                             items: 1,
-                            nav: true
+                            nav: false
                         },
-                        500: {
+                        768: {
                             items: 1,
                             nav: true
                         },

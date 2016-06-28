@@ -42,6 +42,16 @@ angular.module('app').directive('googleDoc', function appVersion() {
                         + '</table></div><div class="lunch-menu table-2"><table>' + table2.html() + '</table></div>';
                 $('.google-doc', $element).html(render);
 			// Gallerie
+			} else if ($attrs.type === 'lunch-menu-date') {
+                var firstVal = '';
+                $build.find('span').each(function(i, el) {
+                    if ($(el).text() !== '') {
+                        firstVal = $(el).text();
+                        return false;
+                    }
+                });
+                $('.google-doc', $element).remove();
+                $element.text(firstVal);
 			} else if ($attrs.type === 'gallerie') {
                 var _findNextSpan = function($p) {
                     var $span = $p.next().find('span'),
